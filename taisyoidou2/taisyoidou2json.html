@@ -76,6 +76,50 @@ Ketinit(work,sy,rangex,rangey):=(//181001to
   GPACK="tpic"; //180817
   ErrFlag=0;
   KETJSOP=[]; //190129
+  REMOVEPTJS=[]; SLIDEFLG="Y"; //190504
+  KetcindyjsDataList=[];
+  if(!isstring(Fhead),  // 17.10.13from, 17.11.12
+    Fhead=text(curkernel());
+    Fhead=replace(Fhead,".cdy","");
+    Slidename=Fhead; //17.10.24
+  );//17.11.12
+  Dircdy=replace(Dircdy,"%E3%80%80",unicode("3000"));//190416
+  Namecdy=Cindyname();//180608
+  tmp1=Indexall(Dircdy,"%"); //180329from
+  if(length(tmp1)>0,
+    tmp1=append(tmp1,length(Dircdy));
+    tmp2=substring(Dircdy,0,tmp1_1-1);
+    forall(1..(length(tmp1)-1),
+      tmp=substring(Dircdy,tmp1_#,tmp1_#+2);
+      tmp2=tmp2+unicode(tmp);
+      tmp2=tmp2+substring(Dircdy,tmp1_#+2,tmp1_(#+1)-1);
+    );
+    Dircdy=tmp2;
+  ); //180329to
+  if(iswindows(),  //17.12.01
+    Dircdy=replace(Dircdy,"/",pathsep());
+    if(substring(Dircdy,0,1)==pathsep(),
+      Dircdy=substring(Dircdy,1,length(Dircdy));
+    );
+  );
+  Userhome=Homehead+pathsep()+getname(); //190128
+  if(iswindows(),
+    Batparent="\kc.bat";
+  ,
+    if(ismacosx(), //181125from
+      Shellparent="/kc.command"; 
+      Mackc="open"; //190222
+    ,
+      Shellparent="/kc.sh"; 
+      Mackc="bash"; //190222
+    );  //181125to
+  );
+  Changesetting(); //190128
+  Changework(Dircdy+pathsep()+work); //180329to,181001
+  Fnametex=Fhead+".tex";
+  FnameR=Fhead+".r";
+  FnamebodyR=Fhead+"body.r";
+  Fnameout=Fhead+".txt";  // 17.10.13to
   ArrowlineNumber=1;  // 15.01.05
   ArrowheadNumber=1;
   BezierNumber=1; //15.01.03
@@ -372,7 +416,7 @@ Plotdata(name1,func,variable,options):=(
     );
     if(Noflg<2,
       if(isstring(Ltype),
-        Ltype=GetLinestyle(text(Noflg)+Ltype,name);
+        Ltype=Getlinestyle(text(Noflg)+Ltype,name);
      ,
         if(Noflg==1,Ltype=0);
       );
@@ -382,7 +426,7 @@ Plotdata(name1,func,variable,options):=(
   , 
     if(Noflg<2,
       if(isstring(Ltype),
-        Ltype=GetLinestyle(text(Noflg)+Ltype,name);
+        Ltype=Getlinestyle(text(Noflg)+Ltype,name);
       ,
         if(Noflg==1,Ltype=0);
       );
@@ -549,6 +593,8 @@ Colorname2rgb(name):=( //181212
     ["olivegreen",[0.64,0,0.95,0.4]],["rawsienna",[0,0.72,1,0.45]],
     ["sepia",[0,0.83,1,0.7]],["brown",[0,0.81,1,0.6]],
     ["tan",[0.14,0.42,0.56,0]],["gray",[0,0,0,0.5]],
+    ["lightgray",[0,0,0,0.17]], //190429
+    ["cindycolor",[0.66,0,69,0.71]], //190504
     ["black",[0,0,0,1]],["white",[0,0,0,0]]
   ];
   tmp=select(dL,#_1==name);
@@ -659,7 +705,7 @@ Measuredepth(list):=( //190423
   );
   nn;
 );
-GetLinestyle(str,name):=(
+Getlinestyle(str,name):=(
   regional(noflg,tmp,tmp1,tmp2,Dop,Ltype,subflg);
   Ltype=-1;
   Dop="";
@@ -815,7 +861,7 @@ Pointdata(nm,listorg,options):=(
           tmp=#;
         ,
           if(ispoint(#),
-            tmp=text(#);
+            tmp=#.name; //190505
           ,
             tmp=Textformat(#,6);
           );
@@ -907,7 +953,7 @@ Listplot(nm,list,options):=(
   );
   if(Noflg<2,
     if(isstring(Ltype),
-      Ltype=GetLinestyle(text(Noflg)+Ltype,name);
+      Ltype=Getlinestyle(text(Noflg)+Ltype,name);
     ,
       if(Noflg==1,Ltype=0);
     );
@@ -947,11 +993,11 @@ Putintersect(nm,pdata1,pdata2,ptno):=(
 Intersectcrvs(Gr1,Gr2):=Intersectcrvs(Gr1,Gr2,[]);
 Intersectcrvs(Gr1,Gr2,options):=(
   regional(tmp,tmp1,tmp2);
-  tmp1=IntersectcrvsPp(Gr1,Gr2,options);
+  tmp1=Intersectcrvspp(Gr1,Gr2,options);
   apply(tmp1,#_1);
 );
-IntersectcrvsPp(Gr1,Gr2):=IntersectcrvsPp(Gr1,Gr2,[]);
-IntersectcrvsPp(Gr1,Gr2,options):=(
+Intersectcrvspp(Gr1,Gr2):=Intersectcrvspp(Gr1,Gr2,[]);
+Intersectcrvspp(Gr1,Gr2,options):=(
   regional(Out,Eps,Eps2,Eps0,Flg,Data1,Data2,
     Tmp1,Tmp2,Tmp3,Tmp,KL1,KL2,pA,pB,Ni,Nj,
     pP,pQ,rT,Flg,eqL,realL,opstr,Dif);
@@ -1338,9 +1384,9 @@ Circledata(nm,cenrad,options):=(
     ,
       Ctr=1/2*(pA+pB)+1/2*d2/d1*tmp1;
       ra=|pA-Ctr|;
-      tmp=name+"center="+Ctr+";";
+      tmp=name+"center="+Textformat(Ctr,5)+";";
       parse(tmp);
-      Defvar(name+"center",Ctr);
+      Defvar(name+"center",re(Ctr));
     );
   );
   if(ra>0,
@@ -1362,13 +1408,56 @@ Circledata(nm,cenrad,options):=(
   );
   if(Noflg<2,
     if(isstring(Ltype),
-      Ltype=GetLinestyle(text(Noflg)+Ltype,name);
+      Ltype=Getlinestyle(text(Noflg)+Ltype,name);
     ,
       if(Noflg==1,Ltype=0);
     );
     GCLIST=append(GCLIST,[name,Ltype,opcindy]);
   );
   Out;
+);
+Defvar(varstr):=(
+  regional(name,value,tmp,tmp1);
+  if(isstring(varstr),
+    parse(varstr+";");
+    tmp=indexof(varstr,"=");
+    name=substring(varstr,0,tmp-1);
+    value=substring(varstr,tmp,length(varstr));
+    value=parse(value);
+    tmp1=select(1..length(VLIST),VLIST_#_1==name);
+    if(length(tmp1)>0,
+      tmp=tmp1_1;
+      VLIST_tmp=[name,value];
+    ,
+      VLIST=prepend([name,value],VLIST);
+    );
+  ,
+    forall(1..(length(varstr)/2), // 16.11.16from
+      name=varstr_(2*#-1);
+      value=varstr_(2*#);
+      Defvar(name,value);
+    ); // 16.11.16until
+  );
+);
+Defvar(name,value):=(
+  regional(tmp,tmp1);
+  if(islist(value),
+    tmp1="[";
+    forall(value,
+      if(isstring(#), // 16.11.14
+        tmp1=tmp1+Dq+#+Dq+","; // 16.11.14
+      ,
+        tmp1=tmp1+format(#,5)+",";
+      );
+    );
+    tmp1=substring(tmp1,0,length(tmp1)-1)+"]";
+  ,
+    tmp1=format(value,5);
+  );
+  tmp=name+"="+tmp1+";"; // 15.02.06//190415
+  parse(tmp);
+  VLIST=select(VLIST,#_1!=name); // 15.02.08
+  VLIST=prepend([name,value],VLIST);
 );
 Lineplot(nm,list,optionorg):=(
   regional(name,Out,tmp,tmp1,tmp2,opstr,opcindy,Mag,Semi,
@@ -1420,7 +1509,7 @@ Lineplot(nm,list,optionorg):=(
   );
   if(Noflg<2,
     if(isstring(Ltype),
-      Ltype=GetLinestyle(text(Noflg)+Ltype,name);
+      Ltype=Getlinestyle(text(Noflg)+Ltype,name);
     ,
       if(Noflg==1,Ltype=0);
     );
@@ -1649,7 +1738,7 @@ Windispg(gcLorg):=( //190125
               parse(tmp);
             ,
               if(tmp1==1,
-                tmp4=Dashlinedata(Nk,2.5,2.5,0);
+                tmp=tokenize(Nj_2_2,",");tmp4=Dashlinedata(Nk,tmp_1,tmp_2,0); //190512
                 forall(tmp4,
                   tmp="connect("+Textformat(#,5)+tmp3+");";
                   parse(tmp);
@@ -1773,14 +1862,14 @@ Lightarrowdata(Arg1,Arg2):=(
     name="";
     forall(Arg1,
       if(ispoint(#),
-        name=name+text(#);
+        name=name+#.name; //190505
       );
     );
     Lightarrowdata(name,Arg1,Arg2);
   );
 );  //181110from
 Lightarrowdata(nm,ptlist,optionsorg):=(
-  regional(options,Ltype,Noflg,opstr,opcindy,eqL,reL,strL,color,size,coord,
+  regional(options,Ltype,Noflg,opstr,opcindy,eqL,reL,strL,color,size,coord,lineflg,
       flg,lineflg,cutend,tmp,tmp1,tmp2,pA,pB,angle,segpos,cut,scaley,Ev,Nv,pP);
   pA=Pcrd(ptlist_1); pB=Pcrd(ptlist_2);
   scaley=SCALEY; //190412
@@ -1821,6 +1910,7 @@ Lightarrowdata(nm,ptlist,optionsorg):=(
   options=remove(options,strL);
   cutend=[0,0];//180719
   coord="P";//181018
+  lineflg=1; //190504
   forall(eqL,
     tmp=Strsplit(#,"=");
     tmp1=Toupper(substring(tmp_1,0,2));
@@ -1832,6 +1922,11 @@ Lightarrowdata(nm,ptlist,optionsorg):=(
       if(length(cutend)==1,cutend=[cutend_1,cutend_1]);
       options=remove(options,[#]);
     );
+    if(tmp1=="LI",//190504from
+      tmp2=Toupper(substring(tmp2,0,1));
+      if(tmp2=="N",lineflg=0);
+      options=remove(options,[#]);
+    );//190504to
   );
   if(Noflg<3,
     tmp="ar"+nm+"="+Textformat([pA,pB],5)+";";
@@ -1839,7 +1934,13 @@ Lightarrowdata(nm,ptlist,optionsorg):=(
   );
   if(Noflg<2,
     if(isstring(Ltype),
-      Listplot("-ar"+nm,[LLcrd(pA),LLcrd(pB)],append(options,"Msg=n"));
+      if(lineflg==1, //190504from
+        Listplot("-ar"+nm,[LLcrd(pA),LLcrd(pB)],append(options,"Msg=n"));
+      ,
+        tmp=pB;
+        pB=pA;
+        pA=pB-tmp;
+      );  //190504to
       size=0.2*size;
       angle=angle*pi/180;
       pP=pA+segpos*(pB-pA);
@@ -1971,12 +2072,19 @@ Htickmark([1,"1",2,"2",3,"3",4,"4"]);
 Htickmark([-1,"-1",-2,"-2"]);
 Vtickmark([1,"1",2,"2",3,"3",4,"4"]);
 Vtickmark([-1,"-1",-2,"-2"]);
-Letter(P,"e2","P$("+text(P.x)+","+text(P.y)+")$");
-Letter(Q,"n2","Q$("+text(Q.x)+","+text(Q.y)+")$");
+
+if(P.y<=Q.y,
+  Letter(P,"ne2","P$("+text(P.x)+","+text(P.y)+")$");
+  Letter(Q,"n2w","Q$("+text(Q.x)+","+text(Q.y)+")$");
+);
+if(P.y>Q.y,
+  Letter(P,"n2w","P$("+text(P.x)+","+text(P.y)+")$");
+  Letter(Q,"s2e","Q$("+text(Q.x)+","+text(Q.y)+")$");
+);
+
 Expr([3,4],"n","y=2x");
 
 Windispg();
-Help("Putinter");
 ;
 </script>
     <script type="text/javascript">
@@ -1992,17 +2100,17 @@ var cdy = CindyJS({
   },
   angleUnit: "°",
   geometry: [
-    {name: "SW", type: "Free", pos: [4.0, 4.0, -1.6305030700805605], color: [1.0, 1.0, 1.0], size: 1.5, labeled: false},
-    {name: "NE", type: "Free", pos: [4.0, 4.0, 0.8], color: [1.0, 1.0, 1.0], size: 1.5, labeled: false},
-    {name: "P", type: "Free", pos: [4.0, 1.3333333333333333, 1.3333333333333333], color: [1.0, 0.0, 0.0], labeled: false, size: 3.0},
-    {name: "Q", type: "Free", pos: [1.3333333333333333, -4.0, -1.3333333333333333], color: [1.0, 0.0, 0.0], labeled: false, size: 3.0},
-    {name: "M", type: "Free", pos: [-2.0, -4.0, -2.0], color: [1.0, 0.0, 0.0], labeled: false, size: 3.0}
+    {name: "SW", type: "Free", pos: [4.0, 4.0, -1.6305030700805605], color: [1.0,1.0,1.0], labeled: false, size: 2.0, border:false },
+    {name: "NE", type: "Free", pos: [4.0, 4.0, 0.8], color: [1.0,1.0,1.0], labeled: false, size: 2.0, border:false },
+    {name: "P", type: "Free", pos: [4.0, 1.3333333333333333, 1.3333333333333333], color: [1.0, 0.0, 0.0], labeled: false, size: 3.0, border: true },
+    {name: "Q", type: "Free", pos: [1.3333333333333333, -4.0, -1.3333333333333333], color: [1.0, 0.0, 0.0], labeled: false, size: 3.0, border: true },
+    {name: "M", type: "Free", pos: [-2.0, -4.0, -2.0], color: [1.0, 0.0, 0.0], labeled: false, size: 3.0, border: true }
   ],
   ports: [{
     id: "CSCanvas",
     width: 805,
     height: 476,
-    transform: [{visibleRect: [-6.981804833572735, 6.517055343894671, 10.0238014932837, -3.5384336145943514]}],
+    transform: [{visibleRect: [-6.678637095690245, 6.176483930600753, 9.4906948201914, -3.384512332703177]}],
     axes: true,
     grid: 1.0,
     snap: true,
