@@ -1,0 +1,169 @@
+タイトル::slide0//
+
+\newcommand{\Cdot}{\raisebox{-1mm}{\scalebox{2}{$\cdot$}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ページの区切れ//
+%%main::章タイトル(省略)//
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+new::学習目標//
+\slidepage//
+
+itemize//
+item::直線$y=x$に関する対称移動の式を求め，行列の積で表すことができる。//
+item::直線$y=2x$に関する対称移動の式の求め方を説明できる。//
+end//
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ページの区切れ//
+main::直線に関する対称移動//
+\slidepage[m]//
+
+%%%%%%%%%%%%%%%%
+new::対称移動の式(問題1)
+%repeat=1//
+\slidepage//
+
+layer::{130}{0}//
+putnote::sw{120}{12}::fig1,.45//
+end//
+
+\begin{itembox}[l]{問題1}
+\begin{mawarikomi}[5]{45mm}{}
+\hspace*{1zw}
+直線$y=x$に関する対称移動によって，点$\mathrm{P}(x,\ y)$が点$\mathrm{Q}(x',\ y')$へ移るとき，$x'$, $y'$を$x$, $y$の式で表せ。
+\end{mawarikomi}
+
+\vspace{12mm}
+\end{itembox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+new::問題1の体験//
+%repeat=1//
+\slidepage//
+
+layer::{130}{0}//
+putnote::sw{120}{12}::fig1,.45//
+%[1]::\putnotese{0}{57}{\color{red}\scalebox{1.7}{https://kubo-yuge.github.io/}}//
+end//
+
+%[1]::{\color{red}リンク先の画像をクリックし，\\ 点$\mathrm{P}$を動かしてみましょう。}//
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+new::問題1の解答//
+%repeat=2,para//
+\slidepage//
+
+layer::{130}{0}//
+putnote::sw{120}{12}::fig2,.45//
+end//
+
+%[1,-]::右図より，$x', y'$と$x, y$の関係は，\\//
+%[2]::$\left\{\begin{array}{l}x'=y\\ y'=x\end{array}\right.$\\//
+
+%%%%%%%%%%%%%%%%
+new::対称移動の式(問題2)
+%repeat=2,para//
+\slidepage//
+
+layer::{130}{0}//
+putnote::sw{120}{12}::fig3,.45//
+end//
+
+\begin{itembox}[l]{問題2}
+\begin{mawarikomi}[5]{45mm}{}
+\hspace*{1zw}
+直線$y{=}2x$に関する対称移動によって，点$\mathrm{P}(x,\ y)$が点$\mathrm{Q}(x',\ y')$へ移るとき，$x'$, $y'$を$x$, $y$の式で表せ。
+\end{mawarikomi}
+
+\vspace{12mm}
+\end{itembox}
+
+%[2]::{\color{red}問題2は難しい！}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+new::問題2の体験//
+%repeat=1//
+\slidepage//
+
+layer::{130}{0}//
+putnote::sw{120}{12}::fig3,.45//
+\putnotese{0}{57}{\color{red}\scalebox{1.7}{https://kubo-yuge.github.io/}}//
+end//
+
+{\color{red}リンク先の2番目の画像をクリックし，\\ 点$\mathrm{P}$を動かしてみましょう。}//
+
+%%%%%%%%%%%%%%%%
+new::問題1の詳しい調査
+%repeat=8,para
+\slidepage
+
+layer::{130}{0}
+putnote::sw{120}{12}::fig2,.45
+end
+{\color{blue}
+layer::{130}{0}
+%[7]::\lineseg[8]{28}{55}{14}{0}
+end
+}
+
+\begin{mawarikomi}[5]{55mm}{}
+直線$y=x$に関する対称移動は，次の関係式で表される：\\
+%[1,2]::\hspace*{1zw}$\left\{\begin{array}{l}x'=y\\y'=x\end{array}\right.$\\
+%[2]::きちんと書くと\\
+%[2..5]::\hspace*{1zw}$\left\{\begin{array}{l}x'=0\cdot x+1\cdot y\\y'=1\cdot x+0\cdot y\end{array}\right.$\\
+%[5,6]::\hspace*{1zw}$\left\{\begin{array}{l}x'=(0,\ 1)\Cdot(x,\ y)\\y'=(1,\ 0)\Cdot(x,\ y)\end{array}\right.$\\
+%[6,7]::\hspace*{1zw}{\large$\left\{\begin{array}{l}x'=(\begin{array}{cc}0&1\end{array})\left(\begin{array}{c}x\\y\end{array}\right)\vspace{1mm}\\y'=(\begin{array}{cc}1&0\end{array})\left(\begin{array}{c}x\\y\end{array}\right)\end{array}\right.$}\\
+%[4..6]::\hfill（ベクトルの内積）
+%[7]::2つの式を1つにまとめると\\
+%[7,8]::\hspace*{1zw}{\large$\left(\begin{array}{c}x'\\y'\end{array}\right)=\left(\begin{array}{cc}0&1\\1&0\end{array}\right)\left(\begin{array}{c}x\\y\end{array}\right)$}\\
+%[8]::点$\mathrm{P}$の位置ベクトル{\large$\left(\begin{array}{c}x\\y\end{array}\right)$}に対称移動を表す行列{\large$\left(\begin{array}{cc}0&1\\1&0\end{array}\right)$}をかけると，点$\mathrm{Q}$の位置ベクトル{\large$\left(\begin{array}{c}x'\\y'\end{array}\right)$}になることを意味する．
+\end{mawarikomi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+new::移動を表す行列$A$//
+%repeat=10//
+\slidepage//
+
+{\color{red}%% 赤で表示//
+layer::{130}{0}//
+%[9]::\lineseg{33}{71}{15}{90}//
+%[9]::\lineseg{61}{71}{15}{90}//
+end//
+}%% 赤で表示//
+
+%[1,-]::$A=\left(\begin{array}{ll}a&b\\ c&d\end{array}\right)$のとき，//
+%[2,-]::点$(x,y)$の移動先は，\\//
+%[3,-]::$\left(\!\!\begin{array}{ll}a&b\\ c&d\end{array}\!\!\right)\!\!\left(\!\!\begin{array}{l}x\\ y\end{array}\!\!\right)=\left(\!\!\begin{array}{l}ax+by\\ cx+dy\end{array}\!\!\right)$　なので，\\//
+%[4,-]::$\left(\begin{array}{ll}a&b\\ c&d\end{array}\right)\left(\begin{array}{l}1\\ 0\end{array}\right)=$//
+%[5,-]::$\left(\begin{array}{l}a\\ c\end{array}\right)$
+%[6,-]::, $\left(\begin{array}{ll}a&b\\ c&d\end{array}\right)\left(\begin{array}{l}0\\ 1\end{array}\right)=$//
+%[7,-]::$\left(\begin{array}{l}b\\ d\end{array}\right)$\\//
+%[8,-]::２つを横に並べると，\\//
+%[9,-]::$\left(\begin{array}{ll}a&b\\ c&d\end{array}\right)\left(\begin{array}{ll}1&0\\ 0&1\end{array}\right)=\left(\begin{array}{ll}a&b\\ c&d\end{array}\right)$//
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+new::問題2の解答//
+%repeat=5//
+\slidepage//
+
+layer::{130}{0}//
+putnote::sw{125}{25}::fig3,.45//
+%[2..4]::\putnotese{0}{62}{\color{red}\scalebox{1.7}{https://kubo-yuge.github.io/}}//
+end//
+
+平面上の点$\mathrm{P}(x,y)$が直線$y=2x$に関する対称移動した点を$\mathrm{Q}(x',y')$とするとき，$x',y'$を$x,y$の式で表せ。\\//
+(答)\\//
+%[2..4]::{\color{red}リンク先の画像をクリックし，\\ 点$\mathrm{P}$を動かしてみましょう。}\\//
+%[3,4]::{\color{red}どんな点$\mathrm{P}$を考えるといいかな。}\\//
+%[4]::{\color{red}点$\mathrm{P}$として，点$(1,0)$と点$(0,1)$\\ を選んで，点$\mathrm{Q}$を見てみよう。}\\//
+%[5]::$\left\{\begin{array}{l}x'=-\bunsuu{3}{5}x+\bunsuu{4}{5}y\\[4mm] y'=\hspace{4.7mm}\bunsuu{4}{5}x+\bunsuu{3}{5}y\end{array}\right.$\\//
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+new::まとめ//
+%repeat=4//
+\slidepage//
+
+itemize//
+item::直線$y=x$に関する対称移動の式を求め，行列の積で表すと，どうなりましたか。
+item::直線$y=2x$に関する対称移動の式を求めるには，どうすればいいでしょうか。
+end//
+
