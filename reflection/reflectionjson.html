@@ -1400,8 +1400,10 @@ Op(n,object):=( //  16.05.25
   out;
 );
 Fracform(x):=Fracform(x,5);
-Fracform(x,denorg):=(
-  regional(den,fL,tmp,nn,mm,err);
+Fracform(x,den):=Fracform(x,den,5);
+Fracform(x,denorg,deg):=(
+  regional(Eps,den,fL,flg,tmp,nn,mm,err);
+  Eps=10^(-deg);
   den=denorg;
   if(islist(den),
     if(!contains(den,1), den=prepend(1,den));
@@ -1409,12 +1411,22 @@ Fracform(x,denorg):=(
     den=1..den;
   );
   fL=[];
+  flg=0;
   forall(den,
-    tmp=round(x*#);
-    fL=append(fL,[tmp,#,abs(tmp/#-x)]);
+    if(flg==0,
+      tmp=round(x*#);
+      tmp=[tmp,#,abs(tmp/#-x)];
+      if(tmp_3<Eps,
+        flg=1;
+      ,
+        fL=append(fL,tmp);
+      );
+    );
   );
-  fL=sort(fL,#_3);
-  tmp=fL_1;
+  if(flg==0,
+    fL=sort(fL,#_3);
+    tmp=fL_1;
+  );
   mm=tmp_1; nn=tmp_2; err=tmp_3;
   if(nn>1,
     out="fr("+text(mm)+","+text(nn)+")";
@@ -2176,14 +2188,14 @@ var cdy = CindyJS({
   geometry: [
     {name: "SW", type: "Free", pos: [4.0, 4.0, -0.8], color: [1.0,1.0,1.0], labeled: false, size: 2.0, border:false },
     {name: "NE", type: "Free", pos: [4.0, 4.0, 0.8], color: [1.0,1.0,1.0], labeled: false, size: 2.0, border:false },
-    {name: "P", type: "Free", pos: [4.0, 1.3333333333333333, 1.3333333333333333], color: [1.0, 0.0, 0.0], labeled: false, size: 3.0, border: true },
+    {name: "P", type: "Free", pos: [4.0, 2.0, 2.0], color: [1.0, 0.0, 0.0], labeled: false, size: 3.0, border: true },
     {name: "Text50", type: "EditableText", pos: [0.3812648563384126, -4.0, 0.6950103662999942], color: [0.0, 0.0, 0.0], text: "m=", textsize: 18.0}
   ],
   ports: [{
     id: "CSCanvas",
-    width: 867,
-    height: 597,
-    transform: [{visibleRect: [-9.100324843680738, 6.533840751455853, 9.442522722644055, -6.23441760736295]}],
+    width: 902,
+    height: 596,
+    transform: [{visibleRect: [-9.100324843680738, 6.533840751455853, 10.191080582876314, -6.213030239927742]}],
     axes: true,
     grid: 1.0,
     snap: true,
