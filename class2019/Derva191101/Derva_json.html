@@ -1732,7 +1732,7 @@ Dashlinedata(dataorg,sen,gap,ptn):=(
   );
   out;
 );
-Ketcindyjsfigure=0;
+Ketcindyjsfigure=1;
 Ketcindyjsscale=1.2;
 
 ky="";
@@ -1740,7 +1740,7 @@ ky="";
 <script id="csdraw" type="text/x-cindyscript">
 Ketinit();
 
-Setketcindyjs(["Sc=1.2","Nolabel=all","Color=lightgray"]);
+Setketcindyjs(["Sc=1.2","Nolabel=all","Color=lightgray","Figure=y"]);
 Ketcindyjsbody(["<p,f5>微分係数の復習"],[]);
 Addax(1);
 
@@ -1776,9 +1776,9 @@ var cdy = CindyJS({
   ],
   ports: [{
     id: "CSCanvas",
-    width: 953,
-    height: 500,
-    transform: [{visibleRect: [-10.785368674698795, 7.086592771084337, 15.204260240963855, -6.562872289156626]}],
+    width: 449,
+    height: 449,
+    transform: [{visibleRect: [-5.5,5.5,5.5,-5.5]}],
     axes: true,
     grid: 1.0,
     background: "rgb(217,217,217)"
