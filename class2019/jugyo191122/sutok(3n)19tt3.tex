@@ -1,0 +1,431 @@
+\documentclass[a4paper,landscape,10pt,onecolumn,oneside,notitlepage,final]{jsarticle} % コンパイル：platex
+\input{../(kubo)package19.txt} % 標準パッケージをまとめた
+\input{../(kubo)settei19.txt} % 環境の設定をまとめた
+\input{../(kubo)teigi19.txt}% 個人的定義をまとめた
+
+\renewcommand{\labelenumi}{\fbox{\arabic{enumi}}\quad}% 番号の書式をボックスにする。
+
+\opentxt%% answersによりxxx環境の内容を一時ファイルに出力する。
+\begin{CKdata}
+%% 演習問題を入れる。問だけ，解答だけのページを作るため，toi環境も利用する。
+
+\begin{\ckai}\vspace*{-5.5mm}\end{\ckai}
+\hspace*{-6mm}
+{\Large 2019年　後期中間試験対策（数学特論：久保）
+\begin{\ckai}\\ \hfill 解答例\\[-10mm] \end{\ckai}}\\
+
+\hspace{-6mm}\framebox[3ex]{\rule{0ex}{.7em}$1$}\quad%% 大問の番号
+\begin{\ctoi}
+次の行列に逆行列が存在すれば，それを求めよ。逆行列が存在しないときには，$\times$印をつけよ。
+(授業中の課題「逆行列（2次）」)
+\begin{edaenumerate}<3>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $\left(\begin{array}{@{\;}rr@{\;}}2&5\\ 1&3\end{array}\right)$
+\item\ $\left(\begin{array}{@{\;}rr@{\;}}7&9\\ 4&5\end{array}\right)$
+\item\ $\left(\begin{array}{@{\;}rr@{\;}}1&2\\ 4&8\end{array}\right)$
+\item\ $\left(\begin{array}{@{\;}rr@{\;}}1&2\\ 1&1\end{array}\right)$
+\item\ $\left(\begin{array}{@{\;}rr@{\;}}1&2\\ 0&0\end{array}\right)$
+\end{edaenumerate}
+\end{\ctoi}
+%%
+\begin{\ckai}(解答)\par
+\small
+\begin{edaenumerate}<4>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $\left(\begin{array}{@{}rr@{\;}}3&-5\\ -1&2\end{array}\right)$
+\item\ $\left(\begin{array}{@{}rr@{\;}}-5&9\\ 4&-7\end{array}\right)$
+\item\ $\quad\times$
+\item\ $\left(\begin{array}{@{}rr@{\;}}-1&2\\ 1&-1\end{array}\right)$
+\item\ $\quad\times$\\
+\end{edaenumerate}
+\end{\ckai}
+
+\hspace{-6mm}\framebox[3ex]{\rule{0ex}{.7em}$2$}\quad%% 大問の番号
+\begin{\ctoi}
+次の等式をみたす行列$X$を求めよ。
+%% 実教出版「新版 線形代数」p.79練習20を利用する。
+(授業中の課題「逆行列の利用（2次）」)
+
+\begin{edaenumerate}<2>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $
+\left(\begin{array}{@{\;}rr@{\;}}2&3\\ 1&2\end{array}\right)X=
+\left(\begin{array}{@{\;}rr@{\;}}1&1\\ 0&2\end{array}\right)$
+%
+\item\ $X
+\left(\begin{array}{@{\;}rr@{\;}}2&3\\ 1&2\end{array}\right)=
+\left(\begin{array}{@{\;}rr@{\;}}1&1\\ 0&2\end{array}\right)$
+%
+\item\ $
+\left(\begin{array}{@{\;}rr@{\;}}3&1\\ 4&2\end{array}\right)X=
+\left(\begin{array}{@{\;}rr@{\;}}1&2\\ 2&4\end{array}\right)$
+%
+\item\ $X
+\left(\begin{array}{@{\;}rr@{\;}}3&1\\ 4&2\end{array}\right)=
+\left(\begin{array}{@{\;}rr@{\;}}1&2\\ 2&4\end{array}\right)$
+\end{edaenumerate}
+\end{\ctoi}
+%%
+\begin{\ckai}(解答)\par\vspace{-2mm}
+\small \noindent
+(1), (2) 共通に，
+$\left(\begin{array}{@{\;}rr@{\;}}2&3\\ 1&2\end{array}\right)^{-1}=$
+$\left(\begin{array}{@{}rr@{\;}}2&-3\\ -1&2\end{array}\right)$
+\ を利用し，\par \noindent
+(3), (4) 共通に，
+$\left(\begin{array}{@{\;}rr@{\;}}3&1\\ 4&2\end{array}\right)^{-1}=$
+$\bunsuu{1}{2}
+\left(\begin{array}{@{}rr@{\;}}2&-1\\ -4&3\end{array}\right)$
+\ を利用する。\par
+\begin{edaenumerate}<1>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $X=
+\left(\begin{array}{@{}rr@{\;}}2&-3\\ -1&2\end{array}\right)
+\left(\begin{array}{@{\;}rr@{\;}}1&1\\ 0&2\end{array}\right)=
+\left(\begin{array}{@{}rr@{\;}}2&-4\\ -1&3\end{array}\right)$
+%
+\item\ $X=
+\left(\begin{array}{@{\;}rr@{\;}}1&1\\ 0&2\end{array}\right)
+\left(\begin{array}{@{}rr@{\;}}2&-3\\ -1&2\end{array}\right)=
+\left(\begin{array}{@{}rr@{\;}}1&-1\\ -2&4\end{array}\right)$
+%
+\item\ $X=
+\bunsuu{1}{2}
+\left(\begin{array}{@{}rr@{\;}}2&-1\\ -4&3\end{array}\right)
+\left(\begin{array}{@{\;}rr@{\;}}1&2\\ 2&4\end{array}\right)=
+\left(\begin{array}{@{}c@{\qquad}r@{\;}}0&0\\ 1&2\end{array}\right)$
+%
+\item\ $X=
+\left(\begin{array}{@{\;}rr@{\;}}1&2\\ 2&4\end{array}\right)
+\left\{
+\bunsuu{1}{2}
+\left(\begin{array}{@{}rr@{\;}}2&-1\\ -4&3\end{array}\right)
+\right\}$
+$=
+\left(\begin{array}{@{}rr@{\;}}-3&\bunsuu{5}{2}\\ -6&5\end{array}\right)$
+\end{edaenumerate}
+\end{\ckai}
+
+\hspace{-6mm}\framebox[3ex]{\rule{0ex}{.7em}$3$}\quad\\[-5mm]%% 大問の番号
+\hspace{5mm}\begin{\ctoi}
+$\left(\begin{array}{@{\;}rr@{\;}}1&3\\ 2&7\end{array}\right)
+\left(\begin{array}{@{\;}r@{\;}}x\\ y\end{array}\right)=
+\left(\begin{array}{@{\;}r@{\;}}4\\ 6\end{array}\right)$
+をみたす列ベクトル
+$\left(\begin{array}{@{\;}r@{\;}}x\\ y\end{array}\right)$
+を求めよ。\\
+(授業中の課題「逆行列の利用（2次）」)
+\end{\ctoi}
+%
+\begin{\ckai}(解答)\par
+\small \noindent
+$\left(\begin{array}{@{\;}rr@{\;}}1&3\\ 2&7\end{array}\right)^{-1}=
+\left(\begin{array}{@{}rr@{\;}}7&-3\\ -2&1\end{array}\right)$より
+$\left(\begin{array}{@{\;}r@{\;}}x\\ y\end{array}\right)=
+\left(\begin{array}{@{}rr@{\;}}7&-3\\ -2&1\end{array}\right)
+\left(\begin{array}{@{\;}r@{\;}}4\\ 6\end{array}\right)=
+\left(\begin{array}{@{}r@{\;}}10\\ -2\end{array}\right)$
+\end{\ckai}
+
+\hspace{-6mm}\framebox[3ex]{\rule{0ex}{.7em}$4$}\quad%% 大問の番号
+\begin{\ctoi}次の行列の階数を答えよ。
+\begin{edaenumerate}<3>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $\left(\begin{array}{@{\;}rr@{\;}}1&0\\ 0&2\end{array}\right)$
+\item\ $\left(\begin{array}{@{\;}rr@{\;}}1&2\\ 0&0\end{array}\right)$
+\item\ $\left(\begin{array}{@{\;}rrr@{\;}}1&2&3\\ 0&0&1\end{array}\right)$
+\item\ $\left(\begin{array}{@{\;}rr@{\;}}2&4\\ 3&6\end{array}\right)$
+\item\ $\left(\begin{array}{@{\;}rrr@{\;}}1&2&0\\ 0&0&1\\ 0&1&0\end{array}\right)$
+\item\ $\left(\begin{array}{@{\;}rrr@{\;}}1&2&0\\ 0&1&1\\ 0&1&1\end{array}\right)$
+\end{edaenumerate}
+\end{\ctoi}
+%%
+\begin{\ckai}(解答)\par
+\small
+\begin{edaenumerate}<6>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $2$
+\item\ $1$
+\item\ $2$
+\item\ $1$
+\item\ $3$
+\item\ $2$
+\end{edaenumerate}
+\end{\ckai}
+
+\hspace{-6mm}\framebox[3ex]{\rule{0ex}{.7em}$5$}\quad%% 大問の番号
+\begin{\ctoi}行基本変形を用いて，次の行列$A$の逆行列を求めたい。空白部分を埋めよ。\par
+$A=
+\left(\begin{array}{@{}rrr@{\;}}-1&2&-3\\ 2&-2&3\\ -1&1&-1\end{array}\right)$
+のとき，行列
+$
+\left(\begin{array}{@{}rrr@{\;}}-1&2&-3\\ 2&-2&3\\ -1&1&-1\end{array}\right.\left.{\setlength{\fboxsep}{0pt}\fbox{\rule[-5mm]{0mm}{12.5mm}\hspace{18.5mm}}}\;\right)$
+を変形して，\\
+$
+\left(\;{\setlength{\fboxsep}{0pt}\fbox{\rule[-5mm]{0mm}{12.5mm}\hspace{18.5mm}}}
+\right.
+\left.\begin{array}{@{\;}r@{\quad\ }r@{\quad\ }r@{\;}}1&1&0\\ 1&2&3\\ 0&1&2\end{array}\right)
+$となれば，
+$A^{-1}=
+\left(\begin{array}{@{\;}r@{\quad\ }r@{\quad\ }r@{\;}}1&1&0\\ 1&2&3\\ 0&1&2\end{array}\right)
+$である。
+% この行列は，実教出版「新版 線形代数」p.96節末問題4(2)を修正した。
+\end{\ctoi}
+%
+\begin{\ckai}(解答)\par
+{\setlength{\fboxsep}{0pt}\fbox{$\begin{array}{@{\quad}r@{\quad\ }r@{\quad\ }r@{\;\;\;}}1&0&0\\ 0&1&0\\ 0&0&1\end{array}$}}
+\qquad ※ 2箇所とも
+\end{\ckai}
+
+\hspace{-6mm}\framebox[3ex]{\rule{0ex}{.7em}$6$}\quad\\[-5mm]%% 大問の番号
+% 2017年後期中間試験対策M3より
+\hspace{5mm}\begin{\ctoi}
+$A=\left(\begin{array}{@{}rr@{\;}}1&2\\ -1&-1\end{array}\right),
+B=\left(\begin{array}{@{\;}rr@{\;}}1&-2\\ 1&4\end{array}\right)$
+とする。
+\begin{edaenumerate}<1>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $AP=B$となる行列$P$を求めよ。
+\item\ $QA=AB$となる行列$Q$を求めよ。
+\end{edaenumerate}
+\end{\ctoi}
+%
+\begin{\ckai}(解答)\par
+\small
+\begin{edaenumerate}<2>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $P=A^{-1}B=\left(\begin{array}{@{}rr}-3&-6\\ 2&2\end{array}\right)$
+\item\ $Q=ABA^{-1}=\left(\begin{array}{r@{\quad\;}r}3&0\\ 0&2\end{array}\right)$
+\end{edaenumerate}
+\end{\ckai}
+
+\columnbreak\ 
+
+\hspace{-6mm}\framebox[3ex]{\rule{0ex}{.7em}$7$}\quad%% 大問の番号
+\begin{\ctoi}次の連立方程式の係数行列$A$および拡大係数行列$B$を答えよ。
+\begin{edaenumerate}<3>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $\left\{\begin{array}{@{}r@{}r@{}r@{{}={}}r}
+3x& +y&-7z&0\\
+4x& -y&-z&5\\
+ x& -y&+2z&2
+\end{array}\right.$
+\item\ $\left\{\begin{array}{@{}r@{}r@{}r@{{}={}}r}
+ x&   &+3z&1\\
+2x&+3y&+4z&3\\
+ x&+3y&+ z&2
+\end{array}\right.$
+\item\ $\left\{\begin{array}{@{}r@{}r@{{}={}}r}
+ x&{}+3y&4\\
+2x&{}+7y&6\\
+\end{array}\right.$
+\end{edaenumerate}
+\end{\ctoi}
+%
+\begin{\ckai}(解答)\par
+\small
+\begin{edaenumerate}<1>[(1)\ ]%% 小問は，edaenumerateで
+\item\ 
+$A=\left(\begin{array}{@{}rrr}
+\quad\;&\quad\;&\quad\;\\[-5mm]
+3&  1&-7\\
+4& -1&-1\\
+1& -1& 2
+\end{array}\right),
+B=\left(\begin{array}{@{}rrrr}
+\quad\;&\quad\;&\quad\;&\quad\;\\[-5mm]
+3&  1&-7&0\\
+4& -1&-1&5\\
+1& -1& 2&2
+\end{array}\right)$
+\item\ 
+$A=\left(\begin{array}{@{}rrr}
+\quad\;&\quad\;&\quad\;\\[-5mm]
+1& 0& 3\\
+2& 3& 4\\
+1& 3& 1
+\end{array}\right),
+B=\left(\begin{array}{@{}rrrr}
+\quad\;&\quad\;&\quad\;&\quad\;\\[-5mm]
+1& 0& 3&1\\
+2& 3& 4&3\\
+1& 3& 1&2
+\end{array}\right)$
+\item\ 
+$A=\left(\begin{array}{@{}rrr}
+\quad&\quad\\[-5mm]
+1& 3\\
+2& 7
+\end{array}\right),
+B=\left(\begin{array}{@{}rrrr}
+\quad&\quad&\quad\\[-5mm]
+1&3&4\\
+2&7&6\\
+\end{array}\right)$
+\end{edaenumerate}
+\end{\ckai}
+
+\hspace{-6mm}\framebox[3ex]{\rule{0ex}{.7em}$8$}\quad%% 大問の番号
+\begin{\ctoi}次の連立方程式をガウスの消去法で解け。
+\begin{edaenumerate}<3>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $\left\{\begin{array}{@{}r@{}r@{{}={}}r}
+ x&{} -y&1\\
+ x&{} +y&3\\
+\end{array}\right.$
+\item\ $\left\{\begin{array}{@{}r@{}r@{{}={}}r}
+ x&{}+3y&4\\
+2x&{}+7y&6\\
+\end{array}\right.$
+\item\ $\left\{\begin{array}{@{}r@{}r@{{}={}}r}
+ x&{}-2 y&3\\
+ x&{}+\ y&2\\
+\end{array}\right.$
+\end{edaenumerate}
+\end{\ctoi}
+%
+\begin{\ckai}(解答)\par
+\small
+\begin{edaenumerate}<3>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $x= 2, y= 1$
+\item\ $x=10, y=-2$
+\item\ $x= 1, y=-1$
+\end{edaenumerate}
+\end{\ckai}
+
+\hspace{-6mm}\framebox[3ex]{\rule{0ex}{.7em}$9$}\quad%% 大問の番号
+\begin{\ctoi}次の行列式の値をサラスの方法で求めよ。
+\begin{edaenumerate}<3>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $
+\left|\begin{array}{rr@{\quad}}
+\quad&\quad\\[-5mm]
+ 3& 2\\
+ 4& 1
+\end{array}\right|$
+\item\ $
+\left|\begin{array}{rr@{\quad}}
+\quad&\quad\\[-5mm]
+ 3& 2\\
+ 6& 4
+\end{array}\right|$\vspace{1mm}
+\item\ $
+\left|\begin{array}{rr@{\quad}}
+\quad&\quad\\[-5mm]
+ 1&-2\\
+ 4&-5
+\end{array}\right|$
+\item\ $
+\left|\begin{array}{rrr@{\quad}}
+\quad&\quad&\quad\\[-5mm]
+ 3& 2& 4\\
+-1& 3& 0\\
+ 2& 4& 1
+\end{array}\right|$
+\item\ $
+\left|\begin{array}{rrr@{\quad}}
+\quad&\quad&\quad\\[-5mm]
+ 1& 2& 3\\
+ 4& 5& 6\\
+ 7& 8& 9
+\end{array}\right|$
+\item\ $
+\left|\begin{array}{rrr@{\quad}}
+\quad&\quad&\quad\\[-5mm]
+ 2& 3&-1\\
+ 4& 0& 2\\
+ 3& 1&-2
+\end{array}\right|$
+\end{edaenumerate}
+\end{\ctoi}
+%
+\begin{\ckai}(解答)\par
+\small
+\begin{edaenumerate}<6>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $-5$
+\item\ $0$
+\item\ $3$
+\item\ $-29$
+\item\ $0$
+\item\ $34$
+\end{edaenumerate}
+\end{\ckai}
+
+\hspace{-6mm}\framebox[3ex]{\rule{0ex}{.7em}$10$}\quad%% 大問の番号
+\begin{\ctoi}次の行列が正則とならないような実数$k$の値を求めよ。
+% 実教出版「新版 線形代数」p.85節末問題4を参考にしたが，式は固有方程式にした。
+\begin{edaenumerate}<3>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $
+\left(\begin{array}{cc@{\quad}}
+\quad&\quad\\[-5mm]
+ 1-k& 2\\
+   1& -k\\
+\end{array}\right)$
+\item\ $
+\left(\begin{array}{cc@{\quad}}
+\quad&\quad\\[-5mm]
+ k& -3\\
+ 2&k-5\\
+\end{array}\right)$
+\item\ $
+\left(\begin{array}{cc@{\quad}}
+\quad&\quad\\[-5mm]
+ k& 4\\
+ 9& k\\
+\end{array}\right)$
+\end{edaenumerate}
+\end{\ctoi}
+%
+\begin{\ckai}(解答)\par
+\small
+\begin{edaenumerate}<3>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $k=-1, 2$
+\item\ $k=2, 3$
+\item\ $k=\pm 6$
+\end{edaenumerate}
+\end{\ckai}
+
+%%\columnbreak\ 
+\end{CKdata}
+\closetxt%% ここまでの内容をファイルに出力する
+
+\begin{document}% ここから本文
+
+\begin{multicols}{2}
+
+%% 試験範囲確認のページ
+\vspace*{15mm}
+\Large
+2019年 後期中間試験の範囲\par
+3年　数学特論(久保)\\
+
+\large
+行列の性質と行列の利用(教科書pp.76--79,pp.86--99)\par
+
+$\bullet$ 逆行列\par
+$\bullet$ 逆行列の性質\par
+$\bullet$ 連立方程式と行列\par
+$\bullet$ 行列の階数\par
+$\bullet$ 行列の基本変形と逆行列\par
+$\bullet$ 行列式（サラスの方法）\par
+
+\vspace{10mm}
+{\bf 次の問も確認しておくこと。}\\
+
+教科書の節末問題\\
+p.85\ {\bf 4}, \ p.96\ {\bf 1, 3, 4}\\
+
+実教出版「新版 線形代数　演習」\\
+67, 68, 69, 82, 83, 84, 85, 86, 87, 88, 95, 97, 100, 101, 106(1)
+
+\normalsize
+%\columnbreak %%\ 
+\newpage
+
+%% 問のページ
+\renewcommand{\ctoi}{Ckeep} % ctoi部分を通常の黒色
+\renewcommand{\ckai}{Comit} % ckai部分を詰める
+\small\printdoc
+
+\newpage
+
+%% 解のページ
+%%%%%% 下の3行で切り替える %%%%
+\renewcommand{\ckai}{Cmagenta} % ckai部分を通常の黒色
+\renewcommand{\ctoi}{Comit} % ctoi部分を詰める
+\printdoc
+
+\newpage
+
+\end{multicols}
+
+\end{document}
