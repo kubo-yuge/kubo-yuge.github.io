@@ -1,0 +1,38 @@
+%% 弓削商船での教材作成に利用するローカルの定義をまとめておく。2019年9月以降の版。
+%% \input{(kubo)teigi19.txt}として利用する。
+
+%%\newcommand{\maru}[1]{\textcircled{\scriptsize #1}} % 丸数字の定義 %emathを使うならコマンドが重複
+
+%%%% 入力簡略のための定義 %%%%
+
+%% \Dlimit で\lim\limits とする。
+\newcommand{\Dlimit}{\lim\limits}
+
+%% \kugiri で，名前欄と内容の間にT字の罫線を入れる。
+\newcommand{\Tkugiri}{\hrulefill\\[-11mm]
+\begin{multicols}{2}\ \columnbreak \end{multicols}\vspace*{-11mm}%% 横の罫線に段落の縦線をくっつける
+}
+
+
+%%%% 問と解の切替設定に関わる定義 %%%%
+%% answersパッケージによる準備
+\renewcommand{\solutionextension}{txt} %% 出力ファイルの拡張子をtxtにした。これがなければtex
+\Newassociation{CKdata}{output_data}{\jobname.temp}%% answersのコマンド
+%% answersのコマンドのままだと長いし，ファイル名を指定するので，ファイル名固定で短くする。
+\newcommand{\opentxt}{\Opensolutionfile{\jobname.temp}}
+\newcommand{\closetxt}{\Closesolutionfile{\jobname.temp}}
+
+%% versionsパッケージによる環境の準備 %%()
+\excludeversion{Comit}                              %% Comit環境はコメントアウト
+\newenvironment{Ckeep}{\relax}{\relax}              %% Ckeep環境は何もしない
+\newenvironment{Cwhite}{\color{white}}{\relax}      %% Cwhite環境は空白(白色)
+\newenvironment{Cmagenta}{\color{magenta}}{\relax}  %% Cmagenta環境はマゼンタ色
+%% 上の4行を最小限とする。black の用途は，Ckeep で済ます。
+
+% 後ろで再定義に統一するため，いったんctoi, ckai を定義する。
+\newcommand{\ctoi}{Comit} \newcommand{\ckai}{Comit}
+
+%% 本文挿入コマンドの簡略化
+\newcommand{\printdoc}[1][\jobname.temp.txt]{\input{#1}}%% 内容の取込をコマンド化
+
+

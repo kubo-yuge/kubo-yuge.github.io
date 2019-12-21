@@ -1,0 +1,12 @@
+%% 弓削商船での教材作成に利用するパッケージをまとめておく。2019年9月以降の版。
+%% \input{(kubo)package19.txt}として利用する。
+
+\usepackage{amsmath,amssymb,multicol,fancyhdr}  %% AMSパッケージ，多段組パッケージ，ヘッダ制御の追加
+\usepackage{ketpic,ketlayer,graphicx,xcolor} %% ketpicの利用
+%% 扱う色を多くするため "color" に代わり "xcolor"
+\usepackage{versions} %% コメントアウトのパッケージ % ckai環境に使う。
+\usepackage{answers} %% 内容をtempファイルに出力するために使う
+%%\usepackage{enumerate} %% enumerate環境にオプションを使えるようにする。ただし，emathを使うなら，含むから指定不要。
+\usepackage{emath,emathEy,emathMw} %% 山下先生も使ってる
+
+\usepackage[c]{EMesvect}% ベクトル用の矢印の形状を選択するために利用。

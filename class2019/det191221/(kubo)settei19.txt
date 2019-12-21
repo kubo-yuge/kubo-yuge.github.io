@@ -1,0 +1,18 @@
+%% 弓削商船での教材作成に利用する設定をまとめておく。2019年9月以降の版。(以前のものと同じ)
+%% \input{(kubo)settei19.txt}として利用する。
+
+\pagestyle{empty} %\thispagestyle{fancy} \cfoot{}% ヘッダ・フッタの制御、ページ番号の非印刷
+\setmargin{25}{25}{14}{12} % 左右上下のマージンは，setmargin で指定する。
+\setlength{\columnsep}{36mm}
+\setlength{\columnseprule}{.4pt}% 段組み区切り線の太さ
+
+\raggedbottom% 下を揃えず，行間を優先
+
+\setlength{\lineskip}{4pt}\setlength{\lineskiplimit}{4pt}%% 行間を確保して，
+%% 上下の行が4ptより近づかないようにしておく。
+
+ \renewcommand{\headrulewidth}{0pt}\lhead{}\chead{}\rhead{} %% ヘッダの線を引かず、ヘッダを付けない。
+%% 「%」で始まる行は、コメント行で、印刷には関係有りません。
+%%\newcommand{\maru}[1]{\textcircled{\scriptsize #1}} % 丸数字の定義 %emathを使うならコマンドが重複
+
+\renewcommand{\labelenumi}{\fbox{\arabic{enumi}}\quad}% 番号の書式をボックスにする。
