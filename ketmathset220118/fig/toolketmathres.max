@@ -1,0 +1,9 @@
+writefile("/Users/kumac21/DataKuboMac21/KetWkTmp/ketmath2i/ketmathset/fig/toolketmathres.txt")$/*##*/
+powerdisp:false$/*##*/
+display2d:false$/*##*/
+linel:1000$/*##*/
+dtLL:[[((sqrt(2))/(2))/((sqrt(2))/(2)),((sqrt(2))/(2))/((sqrt(2))/(2)),(4*x^(3))/(4*x^3)],[(1)/((1)/(2)),(2)/((sqrt(2))/(2)),(4*x^(3))/(4*x^3)],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]$/*##*/
+res:ratsimp(dtLL)$/*##*/
+disp(res)$/*##*/
+closefile()$/*##*/
+quit()$/*##*/
