@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     
-    <title>問1(2)の図(解1)js+.cdy</title>
+    <title>toi(2)(kai1)js+.cdy</title>
     <style type="text/css">
         * {
             margin: 0px;
@@ -4233,7 +4233,7 @@ if(contains(Ch,2),
 );
 
 Setunitlen("8mm");
-Setwindow([-6,6],[-5,9]);
+Setwindow([-6,9],[-5,9]);
 Putpoint3d("O",[0,0,0],["fix"]);
 
 Slider("XS-XH-XE",[-4.5,-7],[4.5,-7]);
@@ -4247,15 +4247,14 @@ Putpoint3d(["Q",[-5,0,0]],["fix"]);
 Listplot("1",[A,B,C,A]);
 Shade("1",["sg2"],["Color=[0,0,0,0.2]"]);
 
-Spacecurve("1","[t,sqrt(25-t^2),sqrt(25-t^2)]","t=[-5,5]");
 Spacecurve("2","[t,sqrt(25-t^2),0]","t=[-5,5]");
 
 Putpoint3d(["XEND",[7,0,0]],["fix"]);
 Putpoint3d(["YEND",[0,7,0]],["fix"]);
 Spaceline("000",[[-6,0,0],XEND]);
 Spaceline("111",[[0,-1,0],YEND]);
-Arrowhead(XEND,XEND-[0,0]);
-Arrowhead(YEND,YEND-[0,0]);
+Arrowhead(XEND,XEND-[0,0],[2]);
+Arrowhead(YEND,YEND-[0,0],[2]);
 Expr3d([XEND,"e","x",YEND,"w","y"]);
 Expr3d([O,"s2","{\mathrm O}"]);
 Expr3d([A,"se","{\mathrm A}",B,"nw","{\mathrm B}",C,"n2","{\mathrm C}"]);
@@ -4263,6 +4262,8 @@ Expr3d([P,"se","{\mathrm P}",Q,"se","{\mathrm Q}"]);
 
 Listplot("2",[A,B,C,A]);
 Shade("2",["sg2"],["Color=[0,0,0,0.2]"]);
+
+Spacecurve("1","[t,sqrt(25-t^2),sqrt(25-t^2)]","t=[-5,5]");
 
 if(!contains(Ch,2),;
 Spacecurve("h1","[5*cos(t),5*sin(t),6]","t=[0,2*pi]",["da","Color=[1,0,0,.4]"]);
@@ -4300,36 +4301,34 @@ var cdy = CindyJS({
   },
   angleUnit: "°",
   geometry: [
-    {name: "Zz", type: "Free", pos: [4.0, 1.978563556852648, 0.3957127113705296], color: [1.0,1.0,1.0], labeled: false, textsize: 10.0, size: 2.0, border:false },
-    {name: "NE", type: "Free", pos: [-2.6666666666666665, -4.0, -0.4444444444444444], color: [1.0,1.0,1.0], labeled: false, size: 2.0, border:false },
     {name: "SW", type: "Free", pos: [4.0, 3.3333333333333335, -0.6666666666666666], color: [1.0,1.0,1.0], labeled: false, size: 2.0, border:false },
+    {name: "NE", type: "Free", pos: [4.0, 4.0, 0.4444444444444444], color: [1.0,1.0,1.0], labeled: false, size: 2.0, border:false },
+    {name: "LB", type: "Free", pos: [-3.6666666666666665, -4.0, 0.6666666666666666], color: [1.0, 0.0, 0.0], size: 0.0, border: true },
     {name: "TH", type: "Free", pos: [-1.4545454545454546, -4.0, 0.7272727272727273], color: [1.0, 0.0, 0.0], labeled: true, size: 3.0, border: true },
     {name: "FI", type: "Free", pos: [0.3333333333333333, -4.0, 0.6666666666666666], color: [1.0, 0.0, 0.0], labeled: true, size: 3.0, border: true },
-    {name: "LB", type: "Free", pos: [-3.6666666666666665, -4.0, 0.6666666666666666], color: [1.0, 0.0, 0.0], size: 0.0, border: true },
-    {name: "XH", type: "Free", pos: [1.2350104785461227, -4.0, 0.5714285714285714], color: [1.0, 0.0, 0.0], labeled: false, textsize: 10.0, size: 3.0, border: true },
-    {name: "XHz", type: "Free", pos: [4.0, -0.0, 0.3179620394251108], color: [1.0,1.0,1.0], labeled: false, textsize: 10.0, size: 2.0, border:false },
-    {name: "A", type: "Free", pos: [4.0, 2.383507185234616, 2.879279356341505], color: [1.0, 0.0, 0.0], labeled: false, textsize: 10.0, size: 3.0, border: true },
-    {name: "Az", type: "Free", pos: [4.0, 0.0, 0.2987474302556869], color: [1.0,1.0,1.0], labeled: false, textsize: 10.0, size: 2.0, border:false },
-    {name: "B", type: "Free", pos: [3.627164927222093, -4.0, -1.7567734675954987], color: [1.0, 0.0, 0.0], labeled: false, textsize: 10.0, size: 3.0, border: true },
-    {name: "Bz", type: "Free", pos: [4.0, 0.0, 0.4026038096132528], color: [1.0,1.0,1.0], labeled: false, textsize: 10.0, size: 2.0, border:false },
-    {name: "C", type: "Free", pos: [1.3360123309768022, -4.0, -0.6470814155225066], color: [1.0, 0.0, 0.0], labeled: false, textsize: 10.0, size: 3.0, border: true },
-    {name: "Cz", type: "Free", pos: [4.0, 1.815244061375139, 0.40260380961325287], color: [1.0,1.0,1.0], labeled: false, textsize: 10.0, size: 2.0, border:false },
-    {name: "XEND", type: "Free", pos: [4.0, 2.383507185176879, 0.8889850439213766], color: [1.0, 0.0, 0.0], labeled: false, textsize: 10.0, size: 3.0, border: true },
-    {name: "XENDz", type: "Free", pos: [4.0, 0.0, 0.24243139388883006], color: [1.0,1.0,1.0], labeled: false, textsize: 10.0, size: 2.0, border:false },
-    {name: "YEND", type: "Free", pos: [4.0, -1.6781992623626858, -0.745947022480157], color: [1.0, 0.0, 0.0], labeled: false, textsize: 10.0, size: 3.0, border: true },
-    {name: "YENDz", type: "Free", pos: [4.0, 0.0, 0.6026193847507247], color: [1.0,1.0,1.0], labeled: false, textsize: 10.0, size: 2.0, border:false },
     {name: "O", type: "Free", pos: [0.0, 0.0, 4.0], color: [1.0, 0.0, 0.0], labeled: false, textsize: 10.0, size: 3.0, border: true },
-    {name: "Oz", type: "Free", pos: [4.0, 0.0, 0.3333333333333333], color: [1.0,1.0,1.0], labeled: false, textsize: 10.0, size: 2.0, border:false },
+    {name: "Oz", type: "Free", pos: [4.0, 0.0, 0.26666666666666666], color: [1.0,1.0,1.0], labeled: false, textsize: 10.0, size: 2.0, border:false },
+    {name: "XH", type: "Free", pos: [1.4179364638948573, -4.0, 0.5714285714285714], color: [1.0, 0.0, 0.0], labeled: false, size: 3.0, border: true },
+    {name: "A", type: "Free", pos: [4.0, 2.3835071852276863, 2.507827583333408], color: [1.0, 0.0, 0.0], labeled: false, textsize: 10.0, size: 3.0, border: true },
+    {name: "Az", type: "Free", pos: [4.0, 0.0, 0.2410363698617231], color: [1.0,1.0,1.0], labeled: false, textsize: 10.0, size: 2.0, border:false },
+    {name: "B", type: "Free", pos: [2.950714528968477, -4.0, -1.7053646675472962], color: [1.0, 0.0, 0.0], labeled: false, textsize: 10.0, size: 3.0, border: true },
+    {name: "Bz", type: "Free", pos: [4.0, 0.0, 0.3014375773940443], color: [1.0,1.0,1.0], labeled: false, textsize: 10.0, size: 2.0, border:false },
+    {name: "C", type: "Free", pos: [1.1337010851405827, -4.0, -0.6552222369117678], color: [1.0, 0.0, 0.0], labeled: false, textsize: 10.0, size: 3.0, border: true },
+    {name: "Cz", type: "Free", pos: [4.0, 1.3084859623617253, 0.3014375773940443], color: [1.0,1.0,1.0], labeled: false, textsize: 10.0, size: 2.0, border:false },
     {name: "P", type: "Free", pos: [4.0, 2.383507185215848, 1.2445790615009913], color: [1.0, 0.0, 0.0], labeled: false, textsize: 10.0, size: 3.0, border: true },
-    {name: "Pz", type: "Free", pos: [4.0, 0.0, 0.26291680610732254], color: [1.0,1.0,1.0], labeled: false, textsize: 10.0, size: 2.0, border:false },
+    {name: "Pz", type: "Free", pos: [4.0, 0.0, 0.21961203499049892], color: [1.0,1.0,1.0], labeled: false, textsize: 10.0, size: 2.0, border:false },
     {name: "Q", type: "Free", pos: [4.0, 2.383507185215848, -1.2445790615009913], color: [1.0, 0.0, 0.0], labeled: false, textsize: 10.0, size: 3.0, border: true },
-    {name: "Qz", type: "Free", pos: [4.0, 0.0, 0.45526653716248533], color: [1.0,1.0,1.0], labeled: false, textsize: 10.0, size: 2.0, border:false }
+    {name: "Qz", type: "Free", pos: [4.0, 0.0, 0.33938392793336586], color: [1.0,1.0,1.0], labeled: false, textsize: 10.0, size: 2.0, border:false },
+    {name: "XEND", type: "Free", pos: [4.0, 2.383507185176879, 0.8889850439213766], color: [1.0, 0.0, 0.0], visible: false, labeled: false, textsize: 10.0, size: 3.0, border: true },
+    {name: "XENDz", type: "Free", pos: [4.0, 0.0, 0.20513332538434656], color: [1.0,1.0,1.0], labeled: false, textsize: 10.0, size: 2.0, border:false },
+    {name: "YEND", type: "Free", pos: [4.0, -1.6781992623626858, -0.745947022480157], color: [1.0, 0.0, 0.0], visible: false, labeled: false, textsize: 10.0, size: 3.0, border: false},
+    {name: "YENDz", type: "Free", pos: [4.0, 0.0, 0.41503726072202507], color: [1.0,1.0,1.0], labeled: false, textsize: 10.0, size: 2.0, border:false }
   ],
   ports: [{
     id: "CSCanvas",
-    width: 740,
-    height: 607,
-    transform: [{visibleRect: [-8.40288484001491, 12.839307261141348, 19.418747292472933, -9.981950447534489]}],
+    width: 419,
+    height: 595,
+    transform: [{visibleRect: [-8.40288484001491, 12.839307261141348, 7.350174435001855, -9.530788845386038]}],
     grid: 1.0,
     snap: true,
     background: "rgb(247,247,247)"
