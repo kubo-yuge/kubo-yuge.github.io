@@ -3490,7 +3490,7 @@ Arrowdata([[-.5,0],[8.5,0]]);
 Expr([9,0],"e2","x");
 
 
-ss=Animationparam(C.x,2,10);
+ss=Animationparam(C.x,2,8);
 Mf(ss);
 
 Figpdf();
@@ -3517,10 +3517,6 @@ var cdy = CindyJS({
     {name: "SW", type: "Free", pos: [-2.6666666666666665, -4.0, 2.6666666666666665], color: [1.0,1.0,1.0], labeled: false, size: 2.0, border:false },
     {name: "NE", type: "Free", pos: [4.0, 3.5555555555555554, 0.4444444444444444], color: [1.0,1.0,1.0], labeled: false, size: 2.0, border:false },
     {name: "C", type: "Free", pos: [4.0, -4.0, 4.0], color: [1.0, 0.0, 0.0], labeled: false, size: 7.0, border: true },
-    {name: "Text71", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [1.0, 0.737, 0.467], fillalpha: 0.27272728085517883, pinned: true, script: "resetclock();\nplayanimation();\nAnimeflg=1;\nDirflg=1;\nsorg=Current;\n", text: "Play", textsize: 18.0, dock: {corner: "LL", offset: [310.0, 32.0]}},
-    {name: "Text72", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [1.0, 0.737, 0.467], fillalpha: 0.27272728085517883, pinned: true, script: "stopanimation();\nAnimeflg=\"\";\nsstart=Current;\n", text: "Stop", textsize: 18.0, dock: {corner: "LL", offset: [508.0, 32.0]}},
-    {name: "Text73", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [1.0, 0.737, 0.467], fillalpha: 0.27272728085517883, script: "Animeflg=1-Animeflg;\nif(Animeflg==0,\n  pauseanimation();\n  sorg=sstart;\n,\n  resetclock();\n  playanimation();\n);", text: "Pause", textsize: 18.0, dock: {corner: "LL", offset: [373.0, 32.0]}},
-    {name: "Text74", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [1.0, 0.737, 0.467], fillalpha: 0.27272728085517883, script: "sorg=sstart;\nDirflg=-Dirflg;\nAnimeflg=1;\nresetclock();\nplayanimation();", text: "Rev", textsize: 18.0, dock: {corner: "LL", offset: [448.0, 32.0]}},
     {name: "A0", type: "Free", pos: [0.0, 1.984863571432, 4.0], color: [0.0, 0.0, 0.0], labeled: false, size: 6.0, border: true },
     {name: "P", type: "Free", pos: [4.0, 1.3333333333333333, 1.3333333333333333], color: [0.0, 0.0, 0.0], labeled: false, size: 6.0, border: true },
     {name: "Q", type: "Free", pos: [4.0, 1.8181818181818181, 0.7272727272727273], color: [0.0, 0.0, 0.0], labeled: false, size: 6.0, border: true },
@@ -3530,12 +3526,12 @@ var cdy = CindyJS({
     {name: "A3", type: "Free", pos: [4.0, 2.148463153550367, 0.6666666666666673], color: [1.0, 0.0, 0.0], labeled: false, size: 3.0, border: true },
     {name: "A4", type: "Free", pos: [4.0, 1.3773358170901142, 1.6249989843756347], color: [1.0, 0.0, 0.0], visible: false, labeled: false, size: 3.0, border: true },
     {name: "A5", type: "Free", pos: [4.0, 1.3363975233454235, 1.3000013000013], color: [1.0, 0.0, 0.0], visible: false, labeled: false, size: 3.0, border: true },
-    {name: "A6", type: "Free", pos: [4.0, 1.3672296330676463, 1.083332656250423], color: [1.0, 0.0, 0.0], visible: false, labeled: false, size: 3.0, border: true },
+    {name: "A6", type: "Free", pos: [4.0, 1.3672296330676466, 1.083332656250423], color: [1.0, 0.0, 0.0], visible: false, labeled: false, size: 3.0, border: true },
     {name: "A7", type: "Free", pos: [4.0, 1.43872881853801, 0.9285719260206747], color: [1.0, 0.0, 0.0], visible: false, labeled: false, size: 3.0, border: true },
     {name: "A8", type: "Free", pos: [4.0, 1.5807351035863726, 0.8124994921878174], color: [1.0, 0.0, 0.0], visible: false, labeled: false, size: 3.0, border: true },
-    {name: "A9", type: "Free", pos: [4.0, 1.8396496586054603, 0.7222224228395618], color: [1.0, 0.0, 0.0], visible: false, labeled: false, size: 3.0, border: true },
+    {name: "A9", type: "Free", pos: [4.0, 1.83964965860546, 0.7222224228395618], color: [1.0, 0.0, 0.0], visible: false, labeled: false, size: 3.0, border: true },
     {name: "A10", type: "Free", pos: [4.0, 2.2602148015404993, 0.649999593750254], color: [1.0, 0.0, 0.0], visible: false, labeled: false, size: 3.0, border: true },
-    {name: "A11", type: "Free", pos: [4.0, 2.704975160310995, 0.5909091580578587], color: [1.0, 0.0, 0.0], visible: false, labeled: false, size: 3.0, border: true },
+    {name: "A11", type: "Free", pos: [4.0, 2.704975160310995, 0.5909091580578586], color: [1.0, 0.0, 0.0], visible: false, labeled: false, size: 3.0, border: true },
     {name: "A12", type: "Free", pos: [4.0, 3.1212976871443625, 0.5416663281252115], color: [1.0, 0.0, 0.0], visible: false, labeled: false, size: 3.0, border: true },
     {name: "A13", type: "Free", pos: [4.0, 1.5696116612496627, 0.6538458394971925], color: [1.0, 0.0, 0.0], visible: false, labeled: false, size: 3.0, border: true },
     {name: "A14", type: "Free", pos: [4.0, 1.8813203408048278, 0.6071424234696975], color: [1.0, 0.0, 0.0], visible: false, labeled: false, size: 3.0, border: true },
@@ -3544,14 +3540,17 @@ var cdy = CindyJS({
     {name: "A17", type: "Free", pos: [4.0, 2.4714288450095028, 0.5294114532873804], color: [1.0, 0.0, 0.0], visible: false, labeled: false, size: 3.0, border: true },
     {name: "A18", type: "Free", pos: [4.0, 2.053610912862797, 0.5833335763889902], color: [1.0, 0.0, 0.0], visible: false, labeled: false, size: 3.0, border: true },
     {name: "A19", type: "Free", pos: [4.0, 2.287112303237037, 0.5526312153742003], color: [1.0, 0.0, 0.0], visible: false, labeled: false, size: 3.0, border: true },
-    {name: "A20", type: "Free", pos: [4.0, 2.507153486652011, 0.5249998359375514], color: [1.0, 0.0, 0.0], visible: false, labeled: false, size: 3.0, border: true }
+    {name: "A20", type: "Free", pos: [4.0, 2.507153486652011, 0.5249998359375514], color: [1.0, 0.0, 0.0], visible: false, labeled: false, size: 3.0, border: true },
+    {name: "Text71", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [1.0, 0.737, 0.467], fillalpha: 0.27272728085517883, pinned: true, script: "resetclock();\nplayanimation();\nAnimeflg=1;\nDirflg=1;\nsorg=Current;\n", text: "Play", textsize: 18.0, dock: {corner: "LL", offset: [310.0, 35.0]}},
+    {name: "Text72", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [1.0, 0.737, 0.467], fillalpha: 0.27272728085517883, pinned: true, script: "stopanimation();\nAnimeflg=\"\";\nsstart=Current;\n", text: "Stop", textsize: 18.0, dock: {corner: "LL", offset: [508.0, 35.0]}},
+    {name: "Text73", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [1.0, 0.737, 0.467], fillalpha: 0.27272728085517883, script: "Animeflg=1-Animeflg;\nif(Animeflg==0,\n  pauseanimation();\n  sorg=sstart;\n,\n  resetclock();\n  playanimation();\n);", text: "Pause", textsize: 18.0, dock: {corner: "LL", offset: [373.0, 35.0]}},
+    {name: "Text74", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [1.0, 0.737, 0.467], fillalpha: 0.27272728085517883, script: "sorg=sstart;\nDirflg=-Dirflg;\nAnimeflg=1;\nresetclock();\nplayanimation();", text: "Rev", textsize: 18.0, dock: {corner: "LL", offset: [448.0, 35.0]}}
   ],
   ports: [{
     width: 796,
-    height: 552,
+    height: 535,
     id: "CSCanvas",
-    transform: [{visibleRect: [-3.477777777777778, 9.055555555555555, 14.21111111111111, -3.2111111111111112]}],
-    axes: true,
+    transform: [{visibleRect: [-3.477777777777778, 9.055555555555555, 14.21111111111111, -2.8333333333333335]}],
     grid: 0.5,
     snap: true,
     background: "rgb(247,247,247)"
