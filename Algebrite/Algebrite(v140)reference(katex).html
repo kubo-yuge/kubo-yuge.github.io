@@ -1,0 +1,801 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!-- saved from url=(0058)http://algebrite.org/docs/latest-stable/reference.html#and -->
+<html xmlns="http://www.w3.org/1999/xhtml" class="translated-ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="robots" content="noindex">
+<title>Algebrite v1.4.0 (機械翻訳版) 関数リファレンス</title>
+
+<!--  katexの設定開始  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.css" integrity="sha384-6LkG2wmY8FK9E0vU9OOr8UvLwsaqUg9SETfpq4uTCN1agNe8HRdE9ABlk+fVx6gZ" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.js" integrity="sha384-31El76TwmbHj4rF9DyLsygbq6xoIobG0W+jqXim+a3dU9W53tdH3A/ngRPxOzzaB" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous">
+  </script>
+  
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {delimiters: [
+      {left: "\\[", right: "\\]", display: true},
+      {left: "$", right: "$", display: false}
+    ]});
+  });
+  </script>
+  <!--  katexでの数式のサイズを調整  -->
+  <style>.katex {font-size: 1.0em;}</style>
+<!--  katexの設定終了  -->
+
+<style>
+#note {
+    position: fixed;
+    z-index: 101;
+    top: 0;
+    left: 0;
+    right: 0;
+    /*
+      #ff0000 for old versions
+      ##bdedc0 for latest-stable versions
+    */
+    background: #bdedc0;
+    opacity: 0.8;
+    text-align: center;
+    line-height: 1.5;
+    overflow: hidden; 
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow:    0 0 5px black;
+    box-shadow:         0 0 5px black;
+}
+</style>
+
+
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="./Algebrite v1.4.0 (最新安定版) 関数リファレンス_files/m=el_main_css"></head>
+<body>
+
+
+
+
+<p>
+</p><center>
+
+<h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">関数リファレンス(katex版, kubo)</font></font></h2>
+<small><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Algebrite v.1.4.0 (最新安定版) / ページリビジョン: 1</font></font></small>
+
+<p>
+</p><table>
+<tbody><tr>
+<td valign="top">
+<tt>
+<a href="#abs">abs</a><br>
+<a href="#adj">adj</a><br>
+<a href="#and">and</a><br>
+<a href="#arccos">arccos</a><br>
+<a href="#arccosh">arccosh</a><br>
+<a href="#arcsin">arcsin</a><br>
+<a href="#arcsinh">arcsinh</a><br>
+<a href="#arctan">arctan</a><br>
+<a href="#arctanh">arctanh</a><br>
+<a href="#arg">arg</a><br>
+<a href="#besselj">besselj</a><br>
+<a href="#bessely">bessely</a><br>
+<a href="#ceiling">ceiling</a><br>
+<a href="#check">check</a><br>
+<a href="#choose">choose</a><br>
+<a href="#circexp">circexp</a><br>
+<a href="#clear">clear</a><br>
+<a href="#clearall">clearall</a><br>
+<a href="#coeff">coeff</a><br>
+<a href="#cofactor">cofactor</a><br>
+</tt></td>
+<td>&nbsp;</td>
+
+<td valign="top">
+<tt>
+<a href="#conj">conj</a><br>
+<a href="#contract">contract</a><br>
+<a href="#cos">cos</a><br>
+<a href="#cosh">cosh</a><br>
+<a href="#cross">cross</a><br>
+<a href="#curl">curl</a><br>
+<a href="#d">d</a><br>
+<a href="#defint">defint</a><br>
+<a href="#deg">deg</a><br>
+<a href="#denominator">denominator</a><br>
+<a href="#det">det</a><br>
+<a href="#dim">dim</a><br>
+<a href="#do">do</a><br>
+<a href="#dot">dot</a><br>
+<a href="#draw">draw</a> (利用不可) <br>
+<a href="#eigen">eigen</a><br>
+<a href="#eigen">eigenval</a><br>
+<a href="#eigen">eigenvec</a><br>
+<a href="#erf">erf</a><br>
+<a href="#erfc">erfc</a><br>
+</tt></td><td>&nbsp;</td>
+
+<td valign="top"><tt>
+<a href="#eval">eval</a><br>
+<a href="#exp">exp</a><br>
+<a href="#expand">expand</a><br>
+<a href="#expcos">expcos</a><br>
+<a href="#expsin">expsin</a><br>
+<a href="#factor">factor</a><br>
+<a href="#factorial">factorial</a><br>
+<a href="#filter">filter</a><br>
+<a href="#float">float</a><br>
+<a href="#floor">floor</a><br>
+<a href="#for">for</a><br>
+<a href="#gcd">gcd</a><br>
+<a href="#hermite">hermite</a><br>
+<a href="#hilbert">hilbert</a><br>
+<a href="#imag">imag</a><br>
+<a href="#inner">inner</a><br>
+<a href="#integral">integral</a><br>
+<a href="#inv">inv</a><br>
+<a href="#isprime">isprime</a><br>
+<a href="#laguerre">laguerre</a><br>
+</tt></td>
+<td>&nbsp;</td>
+
+<td valign="top"><tt>
+<a href="#lcm">lcm</a><br>
+<a href="#leading">leading</a><br>
+<a href="#legendre">legendre</a><br>
+<a href="#log">log</a><br>
+<a href="#lookup">lookup</a><br>
+<a href="#mod">mod</a><br>
+<a href="#not">not</a><br>
+<a href="#nroots">nroots</a><br>
+<a href="#numerator">numerator</a><br>
+<a href="#or">or</a><br>
+<a href="#outer">outer</a><br>
+<a href="#polar">polar</a><br>
+<a href="#prime">prime</a><br>
+<a href="#print">print</a><br>
+<a href="#print2dascii">print2dascii</a><br>
+<a href="#printcomputer">printcomputer</a><br>
+<a href="#printhuman">printhuman</a><br>
+<a href="#printlatex">printlatex</a><br>
+<a href="#printlist">printlist</a><br>
+<a href="#product">product</a><br>
+</tt></td>
+<td>&nbsp;</td>
+
+<td valign="top"><tt>
+<a href="#quote">quote</a><br>
+<a href="#quotient">quotient</a><br>
+<a href="#rank">rank</a><br>
+<a href="#rationalize">rationalize</a><br>
+<a href="#real">real</a><br>
+<a href="#rect">rect</a><br>
+<a href="#roots">roots</a><br>
+<a href="#shape">shape</a><br>
+<a href="#simplify">simplify</a><br>
+<a href="#sin">sin</a><br>
+<a href="#sinh">sinh</a><br>
+<a href="#sqrt">sqrt</a><br>
+<a href="#stop">stop</a><br>
+<a href="#subst">subst</a><br>
+<a href="#sum">sum</a><br>
+<a href="#symbolsinfo">symbolsinfo</a><br>
+<a href="#tan">tan</a><br>
+<a href="#tanh">tanh</a><br>
+<a href="#taylor">taylor</a><br>
+<a href="#test">test</a><br>
+     </tt></td><td>&nbsp;</td><td valign="top"><tt>
+<a href="#transpose">transpose</a><br>
+<a href="#unit">unit</a><br>
+<a href="#version">version</a><br>
+<a href="#zero">zero</a><br>
+
+</tt></td></tr></tbody></table>
+</center>
+
+<p>
+複素数関数<tt>
+<a href="#arg">arg</a>
+<a href="#conj">conj</a>
+<a href="#imag">imag</a>
+<a href="#abs">abs</a>
+<a href="#polar">polar</a>
+<a href="#real">real</a>
+<a href="#rect">rect</a>
+</tt>
+
+<p>
+線形代数関数<tt>
+<a href="#abs">abs</a>
+<a href="#adj">adj</a>
+<a href="#cofactor">cofactor</a>
+<a href="#contract">contract</a>
+<a href="#det">det</a>
+<a href="#dot">dot</a>
+<a href="#inv">inv</a>
+<a href="#outer">outer</a>
+<a href="#transpose">transpose</a>
+<a href="#unit">unit</a>
+<a href="#zero">zero</a>
+</tt></p>
+
+<p>
+微積分関数<tt>
+<a href="#circexp">circexp</a>
+<a href="#defint">defint</a>
+<a href="#d">d</a>
+<a href="#eval">eval</a>
+<a href="#integral">integral</a>
+<a href="#taylor">taylor</a>
+</tt></p>
+
+<p>
+多項式関数<tt>
+<a href="#coeff">coeff</a>
+<a href="#deg">deg</a>
+<a href="#eval">eval</a>
+<a href="#expand">expand</a>
+<a href="#factor">factor</a>
+<a href="#leading">leading</a>
+<a href="#nroots">nroots</a>
+<a href="#quotient">quotient</a>
+<a href="#roots">roots</a>
+</tt></p>
+
+<p>
+特殊関数<tt>
+<a href="#besselj">besselj</a>
+<a href="#bessely">bessely</a>
+<a href="#hermite">hermite</a>
+<a href="#laguerre">laguerre</a>
+<a href="#legendre">legendre</a>
+</tt></p>
+
+<p>
+スクリプト<tt>
+<a href="#do">do</a>
+<a href="#for">for</a>
+<a href="#product">product</a>
+<a href="#stop">stop</a>
+<a href="#sum">sum</a>
+<a href="#test">test</a>
+</tt></p>
+
+<h2><a name="abs">abs($x$)</a> <small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/abs.coffee">source</a></small></h2>
+Returns the absolute value of a real number, the magnitude of a complex number, or the vector length.
+<br>実数の絶対値、複素数の大きさ、またはベクトルの長さを返します。
+
+<h2><a name="adj">adj($m$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/adj.coffee">source</a></small></h2>
+Returns the adjunct of matrix m.
+The inverse of m is equal to adj(m) divided by det(m).
+<br>行列の余因子行列を返します。mの逆行列はadj(m)を<a href="#det">det</a>(m)で割ったものに等しくなります。
+
+<h2><a name="and">and($a,b,...$) </a><small><a href="https://github.com/davidedc/Algebrite/search?utf8=%E2%9C%93&amp;q=%22and+definition%22&amp;type=Code">source</a></small></h2>
+Logical-and of predicate expressions.
+<br>述語式の論理積。
+
+<h2><a name="arccos">arccos($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/arccos.coffee">source</a></small></h2>
+Returns the inverse cosine of x.
+<br>x のアークコサイン
+
+<h2><a name="arccosh">arccosh($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/arccosh.coffee">source</a></small></h2>
+Returns the inverse hyperbolic cosine of x.
+<br>x のハイパボリックコサインのインバース
+
+<h2><a name="arcsin">arcsin($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/arcsin.coffee">source</a></small></h2>
+Returns the inverse sine of x.
+<br>x のアークサイン
+
+<h2><a name="arcsinh">arcsinh($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/arcsinh.coffee">source</a></small></h2>
+Returns the inverse hyperbolic sine of x.
+<br>x のハイパボリックサインのインバース
+
+<h2><a name="arctan">arctan($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/arctan.coffee">source</a></small></h2>
+Returns the inverse tangent of x.
+<br>x のアークタンジェント
+
+<h2><a name="arctanh">arctanh($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/arctanh.coffee">source</a></small></h2>
+Returns the inverse hyperbolic tangent of x.
+<br>x のハイパボリックタンジェントのインバース
+
+<h2><a name="arg">arg($z$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/arg.coffee">source</a></small></h2>
+Returns the angle of complex z.
+<br>複素数zの偏角を返します。
+
+<h2><a name="besselj">besselj($x,n$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/besselj.coffee">source</a></small></h2>
+Returns a solution to the Bessel differential equation (Bessel function of first kind).
+<br>ベッセル微分方程式（第 1 種ベッセル関数）の解を返します。
+
+<h2><a name="bessely">bessely($x,n$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/bessely.coffee">source</a></small></h2>
+Bessel function of second kind.
+<br>第二種ベッセル関数。
+
+<h2><a name="ceiling">ceiling($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/ceiling.coffee">source</a></small></h2>
+Returns the smallest integer not less than x.
+<br>x 以上の最小の整数を返します。
+
+
+<h2><a name="check">check($x$) </a><small><a href="https://github.com/davidedc/Algebrite/search?utf8=%E2%9C%93&amp;q=%22check+definition%22&amp;type=Code">source</a></small></h2>
+If x is true then continue, else stop.
+Use A=B to check that A equals B.
+<br>x が真であれば続行し、そうでない場合は停止します。A=B を使用して、A が B に等しいことを確認します。
+
+<h2><a name="choose">choose($n,k$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/choose.coffee">source</a></small></h2>
+Returns the number of combinations of n items taken k at a time.
+<br>一度に k 個ずつ取られた n 個の項目の組み合わせの数を返します。
+
+<h2><a name="circexp">circexp($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/circexp.coffee">source</a></small></h2>
+Returns expression x with circular and hyperbolic functions converted to exponential forms.
+Sometimes this will simplify an expression.
+<br>円関数と双曲線関数を指数形式に変換した式 x を返します。これにより式が簡略化されることがあります。
+
+<h2><a name="clear">clear($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/clear.coffee">source</a></small></h2>
+Completely wipes a variable from the environment (while doing x = quote(x) just unassigns it).
+<br>変数を環境から完全に消去します (x = <a href="#quote">quote</a>(x) を実行すると、変数の割り当てが解除されるだけです)。
+
+<h2><a name="clear">clearall </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/clear.coffee">source</a></small></h2>
+Completely wipes all variables from the environment.
+<br>環境からすべての変数を完全に消去します。
+
+<h2><a name="coeff">coeff($p,x,n$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/coeff.coffee">source</a></small></h2>
+Returns the coefficient of x to the n in polynomial p.
+The x argument can be omitted for polynomials in x.
+<br>多項式 p の n に対する x の係数を返します。x の多項式の場合、x 引数は省略できます。
+
+<h2><a name="cofactor">cofactor($m,i,j$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/cofactor.coffee">source</a></small></h2>
+Let c be the cofactor matrix of matrix m, i.e., tranpose(c) = adj(m).
+This function returns c[i,j].
+<br>c を行列 m の補因子行列とします。つまり、<a href="#transpose">transpose</a>(c) = <a href="#adj">adj</a>(m) です。この関数は c[i,j] を返します。
+
+<h2><a name="conj">conj($z$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/conj.coffee">source</a></small></h2>
+Returns the complex conjugate of z.
+<br>z の複素共役を返します。
+
+<h2><a name="contract">contract($a,i,j$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/contract.coffee">source</a></small></h2>
+Returns "a" summed over indices i and j.
+If i and j are omitted then 1 and 2 are used.
+contract(m) is equivalent to the trace of matrix m.
+<br>インデックス i と j の合計 "a" を返します。i と j が省略されている場合は、1 と 2 が使用されます。contract(m) は、行列 m のトレースに相当します。
+
+<h2><a name="cos">cos($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/cos.coffee">source</a></small></h2>
+Returns the cosine of x.
+<br>x のコサイン
+
+<h2><a name="cosh">cosh($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/cosh.coffee">source</a></small></h2>
+Returns the hyperbolic cosine of x.
+<br>x のハイパボリックコサイン
+
+<h2><a name="cross">cross($u,v$) </a><small><a href="https://github.com/davidedc/Algebrite/search?utf8=%E2%9C%93&amp;q=%22cross+definition%22&amp;type=Code">source</a></small></h2>
+Returns the cross product of vectors u and v.
+<br>ベクトル u と v の外積(クロス積)を返します。
+
+<h2><a name="curl">curl($u$) </a><small><a href="https://github.com/davidedc/Algebrite/search?utf8=%E2%9C%93&amp;q=%22curl+definition%22&amp;type=Code">source</a></small></h2>
+Returns the curl of vector u.
+<br>ベクトル u の回転(rot, curl)を返します。
+
+<h2><a name="d">d($f,x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/derivative.coffee">source</a></small></h2>
+Returns the partial derivative of f with respect to x. x can be a vector e.g. [x,y].
+<br>x に関する f の偏微分を返します。x はベクトル (例: [x,y]) になります。
+
+<h2><a name="defint">defint($f,x,a,b$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/defint.coffee">source</a></small></h2>
+Returns the definite integral of f with respect to x
+evaluated from "a" to "b".
+The argument list can be extended for multiple integrals (or "iterated integrals"), for example a double integral (which can represent for example a volume under a surface), or a triple integral, etc.
+For example, defint(f,x,a,b,y,c,d).
+<br>「a」から「b」まで評価された x に関する f の定積分を返します。引数リストは、二重積分 (たとえば、表面の下の体積を表すことができます) や三重積分など、多重積分 (または「反復積分」) に拡張できます。たとえば、defint(f,x,a,b,y,c,d) です。
+
+<h2><a name="deg">deg($p,x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/degree.coffee">source</a></small></h2>
+Returns the degree of polynomial p(x).
+<br>多項式p(x)の次数を返します。
+
+<h2><a name="denominator">denominator($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/denominator.coffee">source</a></small></h2>
+Returns the denominator of expression x.
+<br>式 x の分母を返します。
+
+<h2><a name="det">det($m$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/det.coffee">source</a></small></h2>
+Returns the determinant of matrix m.
+<br>行列 m の行列式を返します。
+
+<h2><a name="dim">dim($a,n$) </a><small><a href="https://github.com/davidedc/Algebrite/search?utf8=%E2%9C%93&amp;q=%22dim+definition%22&amp;type=Code">source</a></small></h2>
+Returns the cardinality of the nth index of tensor "a".
+<br>テンソル「a」のn番目のインデックスの基数を返します。
+
+<h2><a name="do">do($a,b,...$) </a><small><a href="https://github.com/davidedc/Algebrite/search?utf8=%E2%9C%93&amp;q=%22do+definition%22&amp;type=Code">source</a></small></h2>
+Evaluates each argument from left to right.
+Returns the result of the last argument.
+<br>各引数を左から右に評価します。最後の引数の結果を返します。
+
+<h2><a name="dot">dot($a,b,...$) </a><small><a href="https://github.com/davidedc/Algebrite/search?utf8=%E2%9C%93&amp;q=%22inner+definition%22&amp;type=Code">source</a></small></h2>
+Returns the dot or inner product of tensors.
+<br>テンソルのドット積または内積を返します。
+
+<h2><a name="draw">draw($f,x$) -- 利用不可 </a></h2><a name="draw">
+Draws a graph of f(x).
+Drawing ranges can be set with xrange and yrange.
+<br>f(x) のグラフを描画します。描画範囲は xrange と yrange で設定できます。
+
+<h2><a name="eigen">eigen($m$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/eigen.coffee">source</a></small></h2>
+<h2><tt>eigenval($m$)</tt></h2>
+<h2><tt>eigenvec($m$)</tt></h2>
+These functions compute eigenvalues and eigenvectors numerically.
+Matrix m must be both numerical and symmetric.
+The eigenval function returns a matrix with the eigenvalues along
+the diagonal.
+The eigenvec function returns a matrix with the eigenvectors arranged as row
+vectors.
+The eigen function does not return anything but stores the eigenvalue matrix 
+in D and the eigenvector matrix in Q.
+<br>これらの関数は、固有値(eigenvalue)と固有ベクトル(eigenvec)を数値的に計算します。行列 m は数値かつ対称でなければなりません。eigenval 関数は、対角線に沿って固有値を持つ行列を返します。eigenvec 関数は、行ベクトルとして配置された固有ベクトルを持つ行列を返します。eigen 関数は何も返さず、固有値行列を D に、固有ベクトル行列を Q に格納します。
+<p>
+Example 1. Check the relation AX = lambda X where lambda is an eigenvalue and
+X is the associated eigenvector.
+</p><pre>$Enter$
+
+     A = hilbert(3)
+
+     eigen(A)
+
+     lambda = D[1,1]
+
+     X = Q[1]
+
+     dot(A,X) - lambda X
+
+$Result$
+
+     -1.16435e-14
+
+     -6.46705e-15
+
+     -4.55191e-15
+</pre><!-- Example 1 ここまで -->
+<p>
+Example 2: Check the relation A = Q<sup>T</sup>DQ.
+</p><pre>$Enter$
+
+  A - dot(transpose(Q),D,Q)
+
+$Result$
+
+  6.27365e-12    -1.58236e-11   1.81902e-11
+
+  -1.58236e-11   -1.95365e-11   2.56514e-12
+
+  1.81902e-11    2.56514e-12    1.32627e-11
+</pre><!-- Example 2 ここまで -->
+
+
+<h2><a name="erf">erf($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/erf.coffee">source</a></small></h2>
+Error function of x.
+<br>x の誤差関数。
+
+<h2><a name="erfc">erfc($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/erfc.coffee">source</a></small></h2>
+Complementary error function of x.
+<br>x の相補誤差関数。
+
+<h2><a name="eval">eval($f,x,a$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/eval.coffee">source</a></small></h2>
+Returns f evaluated at x=a.
+<br>x=a で評価された f を返します。
+
+<h2><a name="exp">exp($x$) </a><small><a href="https://github.com/davidedc/Algebrite/search?utf8=%E2%9C%93&amp;q=%22exp+definition%22&amp;type=Code">source</a></small></h2>
+Returns the exponential of x.
+<br>x の指数関数 <big>$e^x$</big> を返します。
+
+<h2><a name="expand">expand($r,x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/expand.coffee">source</a></small></h2>
+Returns the partial fraction expansion of the ratio of polynomials r in  x.
+<br>多項式 r の比の x における部分分数展開を返します。
+
+<h2><a name="expcos">expcos($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/expcos.coffee">source</a></small></h2>
+Returns the exponential cosine of x.
+<br>x の指数余弦を返します。
+
+<h2><a name="expsin">expsin($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/expsin.coffee">source</a></small></h2>
+Returns the exponential sine of x.
+<br>x の指数正弦を返します。
+
+<h2><a name="factor">factor($n$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/factor.coffee">source</a></small></h2>
+Factors integer n.
+<br>整数 n を因数分解します。
+
+<h2><tt>factor($p,x$)</tt></h2>
+Factors polynomial p of x.
+The x can be omitted for polynomials in x.
+The polynomial should be factorable over integers.
+The argument list can be extended for multivariate polynomials.
+For example, factor(p,x,y) factors p over x and then over y.
+<br>多項式 p を x で因数分解します。x の多項式の場合、x は省略できます。多項式は整数で因数分解可能でなければなりません。引数リストは多変数多項式に対して拡張できます。たとえば、factor(p,x,y) は p を x で因数分解し、次に y で因数分解します。
+
+
+<h2><a name="factorial">factorial($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/factorial.coffee">source</a></small></h2>
+Can be entered as x!
+<br>x! として入力できます。(階乗)
+
+<h2><a name="filter">filter($f,a,b,...$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/filter.coffee">source</a></small></h2>
+Returns f excluding any terms containing a, b, etc.
+<br>a, b などを含む項を除いた f を返します。
+
+<h2><a name="float">float($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/float.coffee">source</a></small></h2>
+Converts rational numbers and integers to floating point values.
+The symbol pi is also converted.
+<br>有理数と整数を浮動小数点値に変換します。記号 pi も変換されます。
+
+<h2><a name="floor">floor($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/floor.coffee">source</a></small></h2>
+Returns the largest integer not greater than x.
+<br>x より大きくない最大の整数を返します。
+
+<h2><a name="for">for($do(a,b,...),i,j,k$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/for.coffee">source</a></small></h2>
+For i starting from the integer j through to the integer k (inclusive of both ends if they are different, see examples): evaluate a, then evaluate b, etc.<br>
+j and k must either be integers or evaluate to integers. Either of them can be negative, and they can be equal, e.g.<br>
+...if j &lt; k e.g. j = $-1$ and k = $1$ then i goes through the values $-1,0,1$<br>
+...if j &gt; k e.g. j = $1$ and k = $-1$ then i goes through the values $1,0,-1$<br>
+...if j = k e.g. j = $3$ and k = $3$ (or j = $-3$ and k = $-3$) then i goes through the only value $3$ (or $-3$, respectively)<br>
+The index variable is not clobbered i.e. the original value of the index variable is restored after "for" completes.<br>
+The following script uses "for" to compute pi to six digits using Viete's formula ( see http://www.pi314.net/eng/viete.php ).
+<pre>
+x=0
+y=2
+for(do(x=sqrt(2+x),y=2*y/x), k,1,9)
+float(y)
+</pre>
+<br>整数 j から整数 k まで (両端が異なる場合は両端を含む、例を参照)、i について次のようにします。a を評価し、次に b を評価します。j</font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+と k は整数であるか、整数に評価される必要があります。どちらも負であってもよく、等しくてもかまいません。例: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+...j &lt; k の場合 (例: j = $-1$ かつ k = $1$)、i は値 $-1,0,1$ を順に処理します</font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+。...j &gt; k の場合 (例: j = $1$ かつ k = $-1$)、i は値 $1,0,-1$ を順に処理します</font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+。...j = k の場合 (例: j = $3$ かつ k = $3$ (または j = $-3$ かつ k = $-3$))、i は値 $3$ (またはそれぞれ $-3$) のみを順に処理します。</font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+インデックス変数は上書きされません。つまり、"for" が完了した後、インデックス変数の元の値が復元されます。</font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+次のスクリプトは、"for" を使用して Viete の公式 (http://www.pi314.net/eng/viete.php を参照) で 6 桁の pi を計算します。
+<pre>
+x=0
+y=2
+for(do(x=sqrt(2+x),y=2*y/x), k,1,9)
+float(y)
+</pre>
+
+<h2><a name="gcd">gcd($a,b,...$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/gcd.coffee">source</a></small></h2>
+Returns the greatest common divisor.
+<br>最大公約数を返します。
+
+<h2><a name="hermite">hermite($x,n$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/hermite.coffee">source</a></small></h2>
+Returns the nth Hermite polynomial in x.
+<br>x の n 番目のエルミート多項式を返します。
+
+<h2><a name="hilbert">hilbert($n$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/hilbert.coffee">source</a></small></h2>
+Returns an n by n Hilbert matrix.
+<br>n 行 n 列のヒルベルト行列を返します。
+
+<h2><a name="imag">imag($z$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/imag.coffee">source</a></small></h2>
+Returns the imaginary part of complex z.
+<br>複素数 z の虚部を返します。
+
+<h2><a name="inner">inner($a,b,...$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/inner.coffee">source</a></small></h2>
+Returns the inner product of tensors.
+Same as the dot product.
+<br>テンソルの内積を返します。ドット積と同じです。
+
+<h2><a name="integral">integral($f,x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/integral.coffee">source</a></small></h2>
+Returns the integral of f with respect to x.
+<br>f の x に対する積分を返します。
+
+<h2><a name="inv">inv($m$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/inv.coffee">source</a></small></h2>
+Returns the inverse of matrix m.
+<br>行列 m の逆行列を返します。
+
+<h2><a name="isprime">isprime($n$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/isprime.coffee">source</a></small></h2>
+Returns 1 if n is a prime number, returns zero otherwise.
+<br>n が素数の場合は 1 を返し、そうでない場合は 0 を返します。
+
+<h2><a name="laguerre">laguerre($x,n,a$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/laguerre.coffee">source</a></small></h2>
+Returns the nth Laguerre polynomial in x.
+If "a" is omitted then a=0 is used.
+<br>x の n 番目のラゲール多項式を返します。「a」が省略されている場合は、a=0 が使用されます。
+
+<h2><a name="lcm">lcm($a,b,...$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/lcm.coffee">source</a></small></h2>
+Returns the least common multiple.
+<br>最小公倍数を返します。
+
+<h2><a name="leading">leading($p,x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/leading.coffee">source</a></small></h2>
+Returns the leading coefficient of polynomial p in x.
+<br>多項式 p の x における主係数を返します。
+
+<h2><a name="legendre">legendre($x,n,m$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/legendre.coffee">source</a></small></h2>
+Returns the nth Legendre polynomial in x.
+If m is omitted then m=0 is used.
+<br>x の n 番目のルジャンドル多項式を返します。m が省略されている場合は、m=0 が使用されます。
+
+<h2><a name="log">log($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/log.coffee">source</a></small></h2>
+Returns the natural logarithm of x.
+<br>x の自然対数を返します。
+
+<h2><a name="lookup">lookup($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/lookup.coffee">source</a></small></h2>
+Returns the contents of x without evaluating x. E.g.
+<pre>x = quote(1+2)
+printlist(lookup(x)) # gives (add 1 2)
+</pre>
+xを評価せずにxの内容を返します。例:
+<pre>x = quote(1+2)
+printlist(lookup(x)) # 結果は (add 1 2)
+</pre>
+
+<h2><a name="mod">mod($a,b$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/mod.coffee">source</a></small></h2>
+Returns the remainder of the result of "a" divided by "b".
+<br>「a」を「b」で割った結果の余りを返します。
+
+<h2><a name="not">not($x$) </a><small><a href="https://github.com/davidedc/Algebrite/search?utf8=%E2%9C%93&amp;q=%22not+definition%22&amp;type=Code">source</a></small></h2>
+Returns the logical negation of x.
+<br>x の論理否定を返します。
+
+<h2><a name="nroots">nroots($p,x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/nroots.coffee">source</a></small></h2>
+Returns all of the roots, both real and complex,
+of polynomial p in x.
+The roots are computed numerically.
+The coefficients of p can be real or complex.
+<br>x の多項式 p の実根と複素根をすべて返します。根は数値的に計算されます。p の係数は実数でも複素数でもかまいません。
+
+<h2><a name="numerator">numerator($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/numerator.coffee">source</a></small></h2>
+Returns the numerator of expression x.
+<br>式 x の分子を返します。
+
+<h2><a name="or">or($a,b,...$) </a><a href="https://github.com/davidedc/Algebrite/search?utf8=%E2%9C%93&amp;q=%22or+definition%22&amp;type=Code">source</a></h2>
+Logical-or of predicate expressions.
+<br>述語式の論理和。
+
+<h2><a name="outer">outer($a,b,...$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/outer.coffee">source</a></small></h2>
+Returns the outer product of tensors.
+Also known as the tensor product.
+<br>テンソルの外積を返します。テンソル積とも呼ばれます。
+
+<h2><a name="polar">polar($z$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/polar.coffee">source</a></small></h2>
+Returns complex z in polar form.
+<br>複素数 z を極形式で返します。
+
+<h2><a name="prime">prime($n$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/prime.coffee">source</a></small></h2>
+Returns the nth prime number.
+The domain of n is 1 to 10000.
+<br>n 番目の素数を返します。n の範囲は 1 から 10000 です。
+
+<h2><a name="print">print($a,b,...$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/print.coffee">source</a></small></h2>
+Evaluate expressions and print the results. The "style" of printing is the same as "printcomputer".
+Useful for example for printing from inside a "for" loop.
+<br>式を評価し、結果を出力します。出力の「スタイル」は「printcomputer」と同じです。たとえば、「for」ループ内から出力する場合に便利です。
+
+<h2><a name="print2dascii">print2dascii($a,b,...$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/print.coffee">source</a></small></h2>
+Evaluate expressions and print the results. The expressions are laid out spacially, as if printed with a teletype. Useful for consoles and where fancy latex output can't be visualised.
+Useful for printing from inside a "for" loop.
+<br>式を評価し、結果を出力します。式は、テレタイプで出力されたかのように空間的にレイアウトされます。コンソールや、複雑な LaTeX 出力を視覚化できない場合に便利です。"for" ループ内から出力する場合に便利です。
+
+<h2><a name="printcomputer">printcomputer($a,b,...$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/print.coffee">source</a></small></h2>
+Evaluate expressions and print the results. The style of printing is "computer-frendly", all symbols and operations are printed.
+Useful for printing from inside a "for" loop.
+<br>式を評価し、結果を出力します。出力スタイルは「コンピュータフレンドリー」で、すべてのシンボルと演算が出力されます。「for」ループ内から出力する場合に便利です。
+
+<h2><a name="printlatex">printlatex($a,b,...$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/print.coffee">source</a></small></h2>
+Evaluate expressions and print the results, as latex.
+Useful for printing from inside a "for" loop.
+<br>式を評価し、結果を LaTeX として出力します。"for" ループ内から出力する場合に便利です。
+
+<h2><a name="printlist">printlist($a,b,...$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/print.coffee">source</a></small></h2>
+Evaluate expressions and print the results. Each list of the expression tree is fully laid out. Useful to have an accurate idea of the internal representation.
+Useful for printing from inside a "for" loop.
+<br>式を評価し、結果を出力します。式ツリーの各リストは完全にレイアウトされています。内部表現を正確に把握するのに役立ちます。"for" ループ内から出力する場合に便利です。
+
+<h2><a name="printhuman">printhuman($a,b,...$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/print.coffee">source</a></small></h2>
+Evaluate expressions and print the results, with some human-friendly shortcuts such as omitting the product signs.
+Useful for printing from inside a "for" loop.
+<br>式を評価し、積の記号を省略するなど、人間に優しいショートカットを使用して結果を出力します。"for" ループ内から出力する場合に便利です。
+
+
+<h2><a name="product">product($f,i,j,k$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/product.coffee">source</a></small></h2>
+For i equals j through k evaluate f.
+Returns the product of all f.
+<br>i が j から k までの f を評価します。すべての f の積を返します。
+
+<h2><a name="quote">quote($x$) </a><small><a href="https://github.com/davidedc/Algebrite/search?utf8=%E2%9C%93&amp;q=%22quote+definition%22&amp;type=Code">source</a></small></h2>
+Returns expression x without evaluating it first.
+<br>式 x を最初に評価せずに返します。
+
+<h2><a name="quotient">quotient($p,q,x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/quotient.coffee">source</a></small></h2>
+Returns the quotient of polynomial p(x) over q(x).
+The last argument can be omitted for polynomials in x.
+The remainder can be calculated by p$-$q*quotient(p,q).
+<br>多項式 p(x) を q(x) で割った商を返します。x の多項式の場合、最後の引数は省略できます。余りは p$-$q*quotient(p,q) で計算できます。
+
+<h2><a name="rank">rank($a$) </a><small><a href="https://github.com/davidedc/Algebrite/search?utf8=%E2%9C%93&amp;q=%22rank+definition%22&amp;type=Code">source</a></small></h2>
+Returns the number of indices that tensor "a" has.
+<br>テンソル「a」が持つインデックスの数を返します。
+
+<h2><a name="rationalize">rationalize($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/rationalize.coffee">source</a></small></h2>
+Returns x with everything over a common denominator.
+<br>すべての項を共通の分母で表した形の x を返します。
+
+<h2><a name="real">real($z$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/real.coffee">source</a></small></h2>
+Returns the real part of complex z.
+<br>複素数 z の実部を返します。
+
+<h2><a name="rect">rect($z$) </a></h2>
+Returns complex z in rectangular form.
+<br>複素数 z を直交形式で返します。
+
+<h2><a name="roots">roots($p,x$) </a></h2>
+Returns the values of x such that p(x)=0.
+The polynomial p should be factorable over integers.
+Returns a vector for multiple roots.
+Individual roots can be obtained using component notation, i.e.,
+r1=roots(p,x)[1].
+<br>p(x)=0となるようなxの値を返します。多項式pは整数で因数分解可能でなければなりません。多重根のベクトルを返します。個々の根は成分表記法、つまりr1=roots(p,x)[1]を使用して取得できます。
+
+<h2><a name="shape">shape($x$) </a><small><a href="https://github.com/davidedc/Algebrite/blob/51d40342210d7b4dc574bc1a27fcf28613eb624c/sources/shape.coffee">source</a></small></h2>
+Returns a vector with the "shape" of the input tensor, i.e. a vector with an integer for each dimension (representing the size of each dimension). For example vectors are tensors of one dimension, so a vector with one integer (the length of the vector) is returned. Matrixes are 2-dimensional tensors, so a vector with two integers is returned (rows, columns), etc.
+<br>入力テンソルの「形状」を持つベクトル、つまり各次元の整数 (各次元のサイズを表す) を持つベクトルを返します。たとえば、ベクトルは 1 次元のテンソルなので、1 つの整数 (ベクトルの長さ) を持つベクトルが返されます。行列は 2 次元のテンソルなので、2 つの整数 (行、列) を持つベクトルが返されます。
+
+<h2><a name="simplify">simplify($x$) </a></h2>
+Returns x in a simpler form.
+<br>x をより単純な形式で返します。
+
+<h2><a name="sin">sin($x$) </a></h2>
+Returns the sine of x.
+<br>x の正弦を返します。
+
+<h2><a name="sinh">sinh($x$) </a></h2>
+Returns the hyperbolic sine of x.
+<br>x のハイパボリックサイン
+
+<h2><a name="symbolsinfo">symbolsinfo </a></h2>
+Returns info about all the variables in the environment.
+<br>環境内のすべての変数に関する情報を返します。
+
+<h2><a name="sqrt">sqrt($x$) </a></h2>
+Returns the square root of x.
+<br>x の平方根を返します。
+
+<h2><a name="stop">stop() </a></h2>
+In a script, it does what it says.
+<br>スクリプトでは、記述どおりに動作します。
+
+<h2><a name="subst">subst($a,b,c$) </a></h2>
+Substitutes "a" for "b" in "c" and returns the result.
+<br>"c" の "b" を "a" に置き換え、結果を返します。
+
+<h2><a name="sum">sum($f,i,j,k$) </a></h2>
+For i equals j through k evaluate f.
+Returns the sum of all f.
+<br>i が j から k までの f を評価します。すべての f の合計を返します。
+
+<h2><a name="tan">tan($x$) </a></h2>
+Returns the tangent of $x$.
+<br>xのタンジェント
+
+<h2><a name="tanh">tanh($x$) </a></h2>
+Returns the hyperbolic tangent of $x$.
+<br>xのハイパボリックタンジェント
+
+<h2><a name="taylor">taylor($f,x,n,a$) </a></h2>
+Returns the Taylor expansion of f(x) around x=a.
+If "a" is omitted then a=0 is used.
+The argument n is the degree of the expansion.
+<br>x=a の周りの f(x) のテイラー展開を返します。"a" を省略すると、a=0 が使用されます。引数 n は展開の次数です。
+
+<h2><a name="test">test($a,b,c,d,...$) </a></h2>
+If "a" is true then b is returned
+else if c is true then d is returned, etc.
+If the number of arguments is odd then the last argument is returned
+when all else fails.
+Use A=B to test that A equals B.
+<br>「a」が true の場合は b が返され、そうでない場合は c が true の場合は d が返されます。引数の数が奇数で、他のすべてが失敗した場合は最後の引数が返されます。A=B を使用して、A が B に等しいかどうかをテストします。
+
+<h2><a name="transpose">transpose($a,i,j$) </a></h2>
+Returns the transpose of "a" with respect to indices i and j.
+If i and j are omitted then 1 and 2 are used.
+Hence a matrix can be transposed with a single argument,
+i.e., transpose(a).
+<br>インデックス i と j に関して「a」の転置を返します。i と j が省略されている場合は、1 と 2 が使用されます。したがって、行列は単一の引数、つまり transpose(a) で転置できます。
+
+<h2><a name="unit">unit($n$) </a></h2>
+Returns an n by n identity matrix.
+<br>n 行 n 列の単位行列を返します。
+
+<h2><a name="version">version </a></h2>
+Prints out version.
+<br>バージョンを印刷します。
+
+<h2></a><a name="zero">zero($i,j,...$) </a></h2>
+Returns a null tensor with dimensions i, j, etc.
+Useful for creating a tensor and then setting the component values.
+<br>i、j などの次元を持つ null テンソルを返します。テンソルを作成してからコンポーネント値を設定する場合に便利です。<br>
+
+<p></p>
+</body></html>
