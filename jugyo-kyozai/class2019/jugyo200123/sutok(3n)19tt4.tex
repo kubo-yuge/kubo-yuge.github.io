@@ -1,0 +1,279 @@
+\documentclass[a4paper,landscape,10pt,onecolumn,oneside,notitlepage,final]{jsarticle} % コンパイル：platex
+\input{../(kubo)package19.txt} % 標準パッケージをまとめた
+\input{../(kubo)settei19.txt} % 環境の設定をまとめた
+\input{../(kubo)teigi19.txt}% 個人的定義をまとめた
+
+\renewcommand{\labelenumi}{\fbox{\arabic{enumi}}\quad}% 番号の書式をボックスにする。
+
+\newcommand{\printtitle}{2019年　後期期末試験の範囲\par 3年 数学特論(久保)}
+
+\opentxt%% answersによりxxx環境の内容を一時ファイルに出力する。
+\begin{CKdata}
+%% 演習問題を入れる。問だけ，解答だけのページを作るため，toi環境も利用する。
+
+\begin{\ckai}\vspace*{-5.5mm}\end{\ckai}
+\hspace*{-6mm}
+{\Large \printtitle
+\begin{\ckai} \hfill 解答例\\[-5mm] \end{\ckai}}\\
+
+\hspace{-6mm}\framebox[3ex]{\rule{0ex}{.7em}$1$}\quad%% 大問の番号
+\begin{\ctoi}
+$3$次の正方行列$A=
+\left(
+\begin{array}{rrr}
+a_1 & b_1 & c_1\\
+a_2 & b_2 & c_2\\
+a_3 & b_3 & c_3\\
+\end{array}
+\right)
+$の行列式$|A|$の値を$k(\neq 0)$とするとき，次の行列の値を答えよ。
+\begin{edaenumerate}<3>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $\left|
+\begin{array}{rrr}
+a_2 & b_2 & c_2\\
+a_1 & b_1 & c_1\\
+a_3 & b_3 & c_3\\
+\end{array}
+\right|$
+\item\ $\left|
+\begin{array}{rrr}
+ a_1 & b_1 & c_1\\
+5a_2 &5b_2 &5c_2\\
+ a_3 & b_3 & c_3\\
+\end{array}
+\right|$
+\item\ $\left|
+\begin{array}{rrr}
+5a_2 &5b_2 &5c_2\\
+5a_1 &5b_1 &5c_1\\
+5a_3 &5b_3 &5c_3\\
+\end{array}
+\right|$
+\end{edaenumerate}
+\end{\ctoi}
+%%
+\begin{\ckai}(解答)\par
+\small
+\begin{edaenumerate}<1>[(1)\ ]%% 小問は，edaenumerateで
+\item\ 第$1$列と第$2$列が交換されているから，$-k$
+\item\ 第$2$行が$5$倍されているから，$5k$
+\item\ 第$1$列と第$2$列が交換され,かつ,$3$つの列が$5$倍されているから，$-5^3k=-125k$
+\end{edaenumerate}
+\end{\ckai}
+
+\hspace{-6mm}\framebox[3ex]{\rule{0ex}{.7em}$2$}\quad%% 大問の番号
+\begin{\ctoi}
+$3$次の正方行列について，$|-2A|=k|A|$をみたす定数$k$の値を答えよ。\\
+ただし，$|A|\neq 0$とする。
+\end{\ctoi}
+%
+\begin{\ckai}(解答)\par
+$(-2)^3=-8$
+\end{\ckai}
+
+\hspace{-6mm}\framebox[3ex]{\rule{0ex}{.7em}$3$}\quad%% 大問の番号
+\begin{\ctoi}次の式は，$3$次の行列式を第$2$列で展開したものである。\par
+$\left|
+\begin{array}{rrr}
+1 & 2 & 3\\
+4 & 5 & 6\\
+7 & 8 & 9\\
+\end{array}
+\right|
+=a
+\left|
+\begin{array}{rr}
+4 & 6 \\
+7 & 9 \\
+\end{array}
+\right|
++b
+\left|
+\begin{array}{rr}
+1 & 3 \\
+7 & 9 \\
+\end{array}
+\right|
++c
+\left|
+\begin{array}{rr}
+1 & 3 \\
+4 & 6 \\
+\end{array}
+\right|$
+\begin{edaenumerate}<3>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $a$の値を答えよ。 \item\ $b$の値を答えよ。 \item\ $c$の値を答えよ。
+\end{edaenumerate}
+\end{\ctoi}
+%%
+\begin{\ckai}(解答) ※ 符号に注意して答える。\par
+\begin{edaenumerate}<4>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $a=-2$ \item\ $b=5$ \item\ $c=-8$
+\end{edaenumerate}
+\end{\ckai}
+
+
+\hspace{-6mm}\framebox[3ex]{\rule{0ex}{.7em}$4$}\quad%% 大問の番号
+\begin{\ctoi}
+次の順列が偶順列であるか奇順列であるか答えよ。
+\begin{edaenumerate}<3>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $(1,2,3)$
+\item\ $(1,3,2)$
+\item\ $(2,1,3)$
+\item\ $(2,3,1)$
+\item\ $(3,1,2)$
+\item\ $(3,2,1)$
+\item\ $(4,3,5,2,1)$
+\item\ $(3,6,1,4,5,2)$
+\end{edaenumerate}
+\end{\ctoi}
+%%
+\begin{\ckai}(解答)\par
+\begin{edaenumerate}<4>[(1)\ ]%% 小問は，edaenumerateで
+\item\ 偶順列
+\item\ 奇順列
+\item\ 奇順列
+\item\ 偶順列
+\item\ 偶順列
+\item\ 奇順列
+\item\ 偶順列
+\item\ 偶順列
+\end{edaenumerate}
+\end{\ckai}
+
+
+\hspace{-6mm}\framebox[3ex]{\rule{0ex}{.7em}$5$}\quad%% 大問の番号
+\begin{\ctoi}
+$3$次の正方行列$A=
+\left(
+\begin{array}{rrr}
+3 & 2 & 1\\
+6 & 5 & 4\\
+0 & 8 & 7\\
+\end{array}
+\right)
+$について次のものを答えよ。
+\begin{edaenumerate}<3>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $(1,\!1)\!$小行列式$D_{1\!1}$\par と$(1,\!1)$余因子$\tilde{a}_{1\!1}$
+\item\ $(1,\!2)\!$小行列式$D_{1\!2}$\par と$(1,\!2)$余因子$\tilde{a}_{1\!2}$
+\item\ $(1,\!3)\!$小行列式$D_{1\!3}$\par と$(1,\!3)$余因子$\tilde{a}_{1\!3}$
+\item\ $(2,\!1)\!$小行列式$D_{2\!1}$\par と$(2,\!1)$余因子$\tilde{a}_{2\!1}$
+\item\ $(2,\!2)\!$小行列式$D_{2\!2}$\par と$(2,\!2)$余因子$\tilde{a}_{2\!2}$
+\item\ $(2,\!3)\!$小行列式$D_{2\!3}$\par と$(2,\!3)$余因子$\tilde{a}_{2\!3}$
+\item\ $(3,\!1)\!$小行列式$D_{3\!1}$\par と$(3,\!1)$余因子$\tilde{a}_{3\!1}$
+\item\ $(3,\!2)\!$小行列式$D_{3\!2}$\par と$(3,\!2)$余因子$\tilde{a}_{3\!2}$
+\item\ $(3,\!3)\!$小行列式$D_{3\!3}$\par と$(3,\!3)$余因子$\tilde{a}_{3\!3}$
+\end{edaenumerate}
+\end{\ctoi}
+%%
+\begin{\ckai}(解答)\par
+\begin{edaenumerate}<3>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $D_{11}=\left|\begin{array}{rr}5&4\\ 8&7\end{array}\right|\\ \ =3$,
+ \ $\tilde{a}_{11}=3$
+\item\ $D_{12}=\left|\begin{array}{rr}6&4\\ 0&7\end{array}\right|\\ \ =42$,
+ \ $\tilde{a}_{12}=-42$
+\item\ $D_{13}=\left|\begin{array}{rr}6&5\\ 0&8\end{array}\right|\\ \ =48$,
+ \ $\tilde{a}_{13}=48$
+\item\ $D_{21}=\left|\begin{array}{rr}2&1\\ 8&7\end{array}\right|\\ \ =6$,
+ \ $\tilde{a}_{21}=-6$
+\item\ $D_{22}=\left|\begin{array}{rr}3&1\\ 0&7\end{array}\right|\\ \ =21$,
+ \ $\tilde{a}_{22}=21$
+\item\ $D_{23}=\left|\begin{array}{rr}3&2\\ 0&8\end{array}\right|\\ \ =24$,
+ \ $\tilde{a}_{23}=-24$
+\item\ $D_{31}=\left|\begin{array}{rr}2&1\\ 5&4\end{array}\right|\\ \ =3$,
+ \ $\tilde{a}_{31}=3$
+\item\ $D_{32}=\left|\begin{array}{rr}3&1\\ 6&4\end{array}\right|\\ \ =6$,
+ \ $\tilde{a}_{32}=-6$
+\item\ $D_{33}=\left|\begin{array}{rr}3&2\\ 6&5\end{array}\right|\\ \ =3$,
+ \ $\tilde{a}_{33}=3$
+\end{edaenumerate}
+\end{\ckai}
+
+
+\hspace{-6mm}\framebox[3ex]{\rule{0ex}{.7em}$6$}\quad%% 大問の番号
+\begin{\ctoi}
+前の問いの正方行列$A$について，余因子行列を$B=\tilde{A}$とする。$B=(b_{ij})$の各成分を答えよ。
+\end{\ctoi}
+%%
+\begin{\ckai}(解答)\par
+\begin{edaenumerate}<3>[(1)\ ]%% 小問は，edaenumerateで
+\item\ $\tilde{a}_{11}=3$  より\par $b_{11}=3$
+\item\ $\tilde{a}_{21}=-6$ より\par $b_{12}=-6$
+\item\ $\tilde{a}_{31}=3$  より\par $b_{13}=3$
+\item\ $\tilde{a}_{12}=-42$より\par $b_{21}=-42$
+\item\ $\tilde{a}_{22}=21$ より\par $b_{22}=21$
+\item\ $\tilde{a}_{32}=-6$ より\par $b_{23}=-6$
+\item\ $\tilde{a}_{13}=48$ より\par $b_{31}=48$
+\item\ $\tilde{a}_{23}=-24$より\par $b_{32}=-24$
+\item\ $\tilde{a}_{33}=3$  より\par $b_{33}=3$
+\end{edaenumerate}
+\end{\ckai}
+
+
+\hspace{-6mm}\framebox[3ex]{\rule{0ex}{.7em}$7$}\quad%% 大問の番号
+\begin{\ctoi}
+クラメルの公式を使えるように練習すること。
+例えば，実教出版「新版 線形代数」p.124 練習$2$, p.135 第$3$章節末問題{\bf 5}(1)
+\end{\ctoi}
+%%
+\begin{\ckai}(解答)\par
+解答は，それぞれの解答ページを参照。
+\end{\ckai}
+
+
+
+
+%\columnbreak\ 
+\end{CKdata}
+\closetxt%% ここまでの内容をファイルに出力する
+
+\begin{document}% ここから本文
+
+\begin{multicols}{2}
+
+%% 試験範囲確認のページ
+\vspace*{15mm}
+\Large
+\printtitle\\
+
+\large
+後期中間試験の範囲\\
+実教出版「新版 線形代数」pp.76---79, pp.86---99\\
+および\par
+
+実教出版「新版 線形代数」pp.100---127\par
+
+$\bullet$ 偶順列・奇順列\par
+$\bullet$ 行列式の性質(pp.103---109)を用いた行列式の計算\par
+$\bullet$ 行列式の展開\par
+$\bullet$ 行列の積の行列式\par
+$\bullet$ 余因子行列と逆行列\par
+$\bullet$ クラメルの公式\par
+
+\vspace{10mm}
+※　後期中間試験を復習しておく。\par
+※　実教出版「新版　線形代数演習」{\bf 107}, {\bf 109}(3), {\bf 115},\par
+p.36{\bf A}の {\bf 1}, {\bf 3}, {\bf 4}\par
+
+\normalsize
+\columnbreak %%\ 
+%\newpage
+
+%% 問のページ
+\renewcommand{\ctoi}{Ckeep} % ctoi部分を通常の黒色
+\renewcommand{\ckai}{Comit} % ckai部分を詰める
+\small\printdoc
+
+\newpage
+
+%% 解のページ
+%%%%%% 下の3行で切り替える %%%%
+\renewcommand{\ctoi}{Comit}    % ctoi部分を詰める
+\renewcommand{\ckai}{Cmagenta} % ckai部分をマゼンタ色
+\printdoc
+
+\newpage
+
+\end{multicols}
+
+\end{document}

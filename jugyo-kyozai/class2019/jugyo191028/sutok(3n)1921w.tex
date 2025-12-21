@@ -1,0 +1,561 @@
+\documentclass[a4paper,10pt,onecolumn,oneside,notitlepage,final]{jsarticle} % コンパイル：platex
+\input{../(kubo)package19.txt} % 標準パッケージをまとめた
+\input{../(kubo)settei19.txt} % 環境の設定をまとめた
+\input{../(kubo)teigi19.txt}% 個人的定義をまとめた
+\setmargin{20}{20}{14}{12} % 左右上下のマージンを再指定する。
+%% 用紙を縦方向で使う。2段組にしない。
+
+\begin{document}
+%% 表示切替をしない。
+%\opentxt%% answersによりxxx環境の内容を一時ファイルに出力する。
+%\begin{CKdata}
+\large
+
+計算例：p.95 練習5(1)\\%% 実教出版「新版 線形代数」
+
+%% 出発とする行列
+$\left(\begin{array}{cc|cc}
+\hspace{6mm}&\hspace{6mm}&\hspace{6mm}&\hspace{6mm}\\[-7mm]
+   1&   2&   1&   0\\[3mm]
+   3&   7&   0&   1\\
+\end{array}\right)$
+%% 操作内容
+$\begin{array}{ll}
+%\downarrow &
+\hfill\to\hfill\\
+\maru{2}+\maru{1}\times(-3)\\
+\end{array}$
+%% 得た行列
+$\left(\begin{array}{cc|cc}
+\hspace{6mm}&\hspace{6mm}&\hspace{6mm}&\hspace{6mm}\\[-7mm]
+   1&   2&   1&   0\\[3mm]
+   0&   1&  -3&   1\\
+\end{array}\right)$
+
+%% 操作内容
+$\begin{array}{ll}
+%\downarrow &
+\hfill\to\hfill\\
+\maru{1}+\maru{2}\times(-2)\\
+\end{array}$
+%% 得た行列
+$\left(\begin{array}{cc|cc}
+\hspace{6mm}&\hspace{6mm}&\hspace{6mm}&\hspace{6mm}\\[-7mm]
+   1&   0&   7&  -2\\[3mm]
+   0&   1&  -3&   1\\
+\end{array}\right)$
+
+よって逆行列は，
+$\left(\begin{array}{cc}
+\hspace{6mm}&\hspace{6mm}\\[-7mm]
+   7&  -2\\[3mm]
+  -3&   1\\
+\end{array}\right)$
+
+\vspace{10mm}
+計算例：p.95 練習5(2)\\%% 実教出版「新版 線形代数」
+
+%% 出発とする行列
+$\left(\begin{array}{cc|cc}
+\hspace{6mm}&\hspace{6mm}&\hspace{6mm}&\hspace{6mm}\\[-7mm]
+   3&  -8&   1&   0\\[3mm]
+   2&  -5&   0&   1\\
+\end{array}\right)$
+%% 操作内容
+$\begin{array}{ll}
+%\downarrow &
+\hfill\to\hfill\\
+\maru{2}+\maru{1}\times(-\bunsuu{2}{3})\\
+\end{array}$
+%% 得た行列
+$\left(\begin{array}{cc|cc}
+\hspace{6mm}&\hspace{6mm}&\hspace{6mm}&\hspace{6mm}\\[-7mm]
+   3&  -8&   1&   0\\[3mm]
+   0& 1/3&-2/3&   1\\
+\end{array}\right)$
+
+%% 操作内容
+$\begin{array}{ll}
+%\downarrow &
+\hfill\to\hfill\\
+\maru{2}\times(3)\\
+\end{array}$
+%% 得た行列
+$\left(\begin{array}{cc|cc}
+\hspace{6mm}&\hspace{6mm}&\hspace{6mm}&\hspace{6mm}\\[-7mm]
+   3&  -8&   1&   0\\[3mm]
+   0&   1&  -2&   3\\
+\end{array}\right)$
+%% 操作内容
+$\begin{array}{ll}
+%\downarrow &
+\hfill\to\hfill\\
+\maru{1}+\maru{2}\times(8)\\
+\end{array}$
+%% 得た行列
+$\left(\begin{array}{cc|cc}
+\hspace{6mm}&\hspace{6mm}&\hspace{6mm}&\hspace{6mm}\\[-7mm]
+   3&   0& -15&  24\\[3mm]
+   0&   1&  -2&   3\\
+\end{array}\right)$\\
+
+%% 操作内容
+$\begin{array}{ll}
+%\downarrow &
+\hfill\to\hfill\\
+\maru{1}\div(3)\\
+\end{array}$
+%% 得た行列
+$\left(\begin{array}{cc|cc}
+\hspace{6mm}&\hspace{6mm}&\hspace{6mm}&\hspace{6mm}\\[-7mm]
+   1&   0&  -5&   8\\[3mm]
+   0&   1&  -2&   3\\
+\end{array}\right)$
+
+よって逆行列は，
+$\left(\begin{array}{cc}
+\hspace{6mm}&\hspace{6mm}\\[-7mm]
+  -5&   8\\[3mm]
+  -2&   3\\
+\end{array}\right)$
+
+\vspace{10mm}
+計算例：p.95 練習5(3)\\%% 実教出版「新版 線形代数」
+
+%% 出発とする行列
+$\left(\begin{array}{cc|cc}
+\hspace{6mm}&\hspace{6mm}&\hspace{6mm}&\hspace{6mm}\\[-7mm]
+   1&   2&   1&   0\\[3mm]
+   3&   4&   0&   1\\
+\end{array}\right)$
+%% 操作内容
+$\begin{array}{ll}
+%\downarrow &
+\hfill\to\hfill\\
+\maru{2}+\maru{1}\times(-3)\\
+\end{array}$
+%% 得た行列
+$\left(\begin{array}{cc|cc}
+\hspace{6mm}&\hspace{6mm}&\hspace{6mm}&\hspace{6mm}\\[-7mm]
+   1&   2&   1&   0\\[3mm]
+   0&  -2&  -3&   1\\
+\end{array}\right)$
+
+%% 操作内容
+$\begin{array}{ll}
+%\downarrow &
+\hfill\to\hfill\\
+\maru{1}+\maru{2}\\
+\end{array}$
+%% 得た行列
+$\left(\begin{array}{cc|cc}
+\hspace{6mm}&\hspace{6mm}&\hspace{6mm}&\hspace{6mm}\\[-7mm]
+   1&   0&  -2&   1\\[3mm]
+   0&  -2&  -3&   1\\
+\end{array}\right)$
+%% 操作内容
+$\begin{array}{ll}
+%\downarrow &
+\hfill\to\hfill\\
+\maru{2}\div(-2)\\
+\end{array}$
+%% 得た行列
+$\left(\begin{array}{cc|cc}
+\hspace{6mm}&\hspace{6mm}&\hspace{6mm}&\hspace{6mm}\\[-7mm]
+   1&   0&  -2&   1\\[3mm]
+   0&   1& 3/2&-1/2\\
+\end{array}\right)$\\
+
+よって逆行列は，
+$\left(\begin{array}{rr}
+\hspace{6mm}&\hspace{6mm}\\[-7mm]
+  -2\;&   1\;\\[3mm]
+\bunsuu{3}{2}&-\bunsuu{1}{2}\\
+\end{array}\right)$
+
+\newpage
+
+\setlength{\columnsep}{9mm}
+\begin{multicols}{2}
+計算例：p.95 練習6(1)\\%% 実教出版「新版 線形代数」
+
+%% 出発とする行列
+$\left(\begin{array}{rrr@{\quad}|rrr}
+\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   2&   0&   1&   0&   0\\[2mm]
+   0&   1&   1&   0&   1&   0\\[2mm]
+   0&   2&   1&   0&   0&   1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}
+\downarrow
+&\maru{1}+\maru{2}\times(-2)\\
+&\maru{3}+\maru{2}\times(-2)\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrr@{\quad}|rrr}
+\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   0&  -2&   1&  -2&   0\\[2mm]
+   0&   1&   1&   0&   1&   0\\[2mm]
+   0&   0&  -1&   0&  -2&   1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}
+\downarrow
+&\maru{3}\times(-1)\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrr@{\quad}|rrr}
+\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   0&  -2&   1&  -2&   0\\[2mm]
+   0&   1&   1&   0&   1&   0\\[2mm]
+   0&   0&   1&   0&   2&  -1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}
+\downarrow
+&\maru{1}+\maru{3}\times(2)\\
+&\maru{2}+\maru{3}\times(-1)\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrr@{\quad}|rrr}
+\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   0&   0&   1&   2&  -2\\[2mm]
+   0&   1&   0&   0&  -1&   1\\[2mm]
+   0&   0&   1&   0&   2&  -1
+\end{array}\right)$\par
+
+よって逆行列は，
+$\left(\begin{array}{rrr}
+\quad&\quad&\quad\\[-7mm]
+   1&   2&  -2\\[2mm]
+   0&  -1&   1\\[2mm]
+   0&   2&  -1
+\end{array}\right)$\par
+
+\columnbreak
+
+計算例：p.95 練習6(2)\\%% 実教出版「新版 線形代数」
+
+%% 出発とする行列
+$\left(\begin{array}{rrr@{\quad}|rrr}
+\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   1&   0&   1&   0&   0\\[2mm]
+   2&   0&  -1&   0&   1&   0\\[2mm]
+   1&   2&   1&   0&   0&   1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}
+\downarrow
+&\maru{2}+\maru{3}\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrr@{\quad}|rrr}
+\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   1&   0&   1&   0&   0\\[2mm]
+   3&   2&   0&   0&   1&   1\\[2mm]
+   1&   2&   1&   0&   0&   1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}
+\downarrow
+&\maru{2}+\maru{1}\times(-3)\\
+&\maru{3}+\maru{1}\times(-1)\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrr@{\quad}|rrr}
+\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   1&   0&   1&   0&   0\\[2mm]
+   0&  -1&   0&  -3&   1&   1\\[2mm]
+   0&   1&   1&  -1&   0&   1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}
+\downarrow
+&\maru{2}\times(-1)\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrr@{\quad}|rrr}
+\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   1&   0&   1&   0&   0\\[2mm]
+   0&   1&   0&   3&  -1&  -1\\[2mm]
+   0&   1&   1&  -1&   0&   1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}
+\downarrow
+&\maru{1}+\maru{2}\times(-1)\\
+&\maru{3}+\maru{2}\times(-1)\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrr@{\quad}|rrr}
+\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   0&   0&  -2&   1&   1\\[2mm]
+   0&   1&   0&   3&  -1&  -1\\[2mm]
+   0&   0&   1&  -4&   1&   2
+\end{array}\right)$\par
+
+よって逆行列は，
+$\left(\begin{array}{rrr}
+\quad&\quad&\quad\\[-7mm]
+  -2&   1&   1\\[2mm]
+   3&  -1&  -1\\[2mm]
+  -4&   1&   2
+\end{array}\right)$\par
+
+\newpage
+
+計算例：p.95 練習6(3)\\%% 実教出版「新版 線形代数」
+
+%% 出発とする行列
+$\left(\begin{array}{rrr@{\quad}|rrr}
+\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   3&   1&   1&   0&   0\\[2mm]
+   2&   5&   4&   0&   1&   0\\[2mm]
+   3&   6&   8&   0&   0&   1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}
+\downarrow
+&\maru{2}+\maru{1}\times(-2)\\
+&\maru{3}+\maru{1}\times(-3)\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrr@{\quad}|rrr}
+\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   3&   1&   1&   0&   0\\[2mm]
+   0&  -1&   2&  -2&   1&   0\\[2mm]
+   0&  -3&   5&  -3&   0&   1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}
+\downarrow
+&\maru{1}+\maru{2}\times(3)\\
+&\maru{3}+\maru{2}\times(-3)\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrr@{\quad}|rrr}
+\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   0&   7&  -5&   3&   0\\[2mm]
+   0&  -1&   2&  -2&   1&   0\\[2mm]
+   0&   0&  -1&   3&  -3&   1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}
+\downarrow
+&\maru{2}\times(-1)\\
+&\maru{3}\times(-1)\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrr@{\quad}|rrr}
+\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   0&   7&  -5&   3&   0\\[2mm]
+   0&   1&  -2&   2&  -1&   0\\[2mm]
+   0&   0&   1&  -3&   3&  -1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}
+\downarrow
+&\maru{1}+\maru{3}\times(-7)\\
+&\maru{2}+\maru{3}\times(2)\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrr@{\quad}|rrr}
+\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   0&   0&  16& -18&   7\\[2mm]
+   0&   1&   0&  -4&   5&  -2\\[2mm]
+   0&   0&   1&  -3&   3&  -1
+\end{array}\right)$\par
+
+よって逆行列は，
+$\left(\begin{array}{rrr}
+\quad&\quad&\quad\\[-7mm]
+  16& -18&   7\\[2mm]
+  -4&   5&  -2\\[2mm]
+  -3&   3&  -1
+\end{array}\right)$\par
+
+\newpage
+
+\newpage
+計算例：p.95 練習7(1)\\%% 実教出版「新版 線形代数」
+
+%% 出発とする行列
+$\left(\begin{array}{rrrr@{\quad}|rrrr}
+\quad&\quad&\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   1&   2&   1&   1&   0&   0&   0\\[2mm]
+   0&   1&   1&   2&   0&   1&   0&   0\\[2mm]
+   0&   1&   2&   2&   0&   0&   1&   0\\[2mm]
+   1&   2&   1&   2&   0&   0&   0&   1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}\downarrow
+&\maru{4}+\maru{1}\times(-1)\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrrr@{\quad}|rrrr}
+\quad&\quad&\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   1&   2&   1&   1&   0&   0&   0\\[2mm]
+   0&   1&   1&   2&   0&   1&   0&   0\\[2mm]
+   0&   1&   2&   2&   0&   0&   1&   0\\[2mm]
+   0&   1&  -1&   1&  -1&   0&   0&   1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}\downarrow
+&\maru{1}+\maru{2}\times(-1)\\
+&\maru{3}+\maru{2}\times(-1)\\
+&\maru{4}+\maru{2}\times(-1)\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrrr@{\quad}|rrrr}
+\quad&\quad&\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   0&   1&  -1&   1&  -1&   0&   0\\[2mm]
+   0&   1&   1&   2&   0&   1&   0&   0\\[2mm]
+   0&   0&   1&   0&   0&  -1&   1&   0\\[2mm]
+   0&   0&  -2&  -1&  -1&  -1&   0&   1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}\downarrow
+&\maru{1}+\maru{3}\times(-1)\\
+&\maru{2}+\maru{3}\times(-1)\\
+&\maru{4}+\maru{3}\times(2)\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrrr@{\quad}|rrrr}
+\quad&\quad&\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   0&   0&  -1&   1&   0&  -1&   0\\[2mm]
+   0&   1&   0&   2&   0&   2&  -1&   0\\[2mm]
+   0&   0&   1&   0&   0&  -1&   1&   0\\[2mm]
+   0&   0&   0&  -1&  -1&  -3&   2&   1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}\downarrow
+&\maru{4}\times(-1)\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrrr@{\quad}|rrrr}
+\quad&\quad&\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   0&   0&  -1&   1&   0&  -1&   0\\[2mm]
+   0&   1&   0&   2&   0&   2&  -1&   0\\[2mm]
+   0&   0&   1&   0&   0&  -1&   1&   0\\[2mm]
+   0&   0&   0&   1&   1&   3&  -2&  -1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}\downarrow
+&\maru{1}+\maru{4}\\
+&\maru{2}+\maru{4}\times(-2)\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrrr@{\quad}|rrrr}
+\quad&\quad&\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   0&   0&   0&   2&   3&  -3&  -1\\[2mm]
+   0&   1&   0&   0&  -2&  -4&   3&   2\\[2mm]
+   0&   0&   1&   0&   0&  -1&   1&   0\\[2mm]
+   0&   0&   0&   1&   1&   3&  -2&  -1
+\end{array}\right)$\par
+
+よって逆行列は，
+$\left(\begin{array}{rrrr}
+\quad&\quad&\quad&\quad\\[-7mm]
+   2&   3&  -3&  -1\\[2mm]
+  -2&  -4&   3&   2\\[2mm]
+   0&  -1&   1&   0\\[2mm]
+   1&   3&  -2&  -1
+\end{array}\right)$\par
+
+\newpage
+
+計算例：p.95 練習7(2)\\%% 実教出版「新版 線形代数」
+
+%% 出発とする行列
+$\left(\begin{array}{rrrr@{\quad}|rrrr}
+\quad&\quad&\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   0&   0&   1&   0&   1&   0&   0&   0\\[2mm]
+   1&   0&   0&  -1&   0&   1&   0&   0\\[2mm]
+  -1&   1&  -1&   1&   0&   0&   1&   0\\[2mm]
+   0&  -1&   0&   1&   0&   0&   0&   1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}\downarrow
+&\maru{3}+\maru{1}\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrrr@{\quad}|rrrr}
+\quad&\quad&\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   0&   0&   1&   0&   1&   0&   0&   0\\[2mm]
+   1&   0&   0&  -1&   0&   1&   0&   0\\[2mm]
+  -1&   1&   0&   1&   1&   0&   1&   0\\[2mm]
+   0&  -1&   0&   1&   0&   0&   0&   1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}\downarrow
+&\maru{3}+\maru{2}\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrrr@{\quad}|rrrr}
+\quad&\quad&\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   0&   0&   1&   0&   1&   0&   0&   0\\[2mm]
+   1&   0&   0&  -1&   0&   1&   0&   0\\[2mm]
+   0&   1&   0&   0&   1&   1&   1&   0\\[2mm]
+   0&  -1&   0&   1&   0&   0&   0&   1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}\downarrow
+&\maru{4}+\maru{3}\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrrr@{\quad}|rrrr}
+\quad&\quad&\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   0&   0&   1&   0&   1&   0&   0&   0\\[2mm]
+   1&   0&   0&  -1&   0&   1&   0&   0\\[2mm]
+   0&   1&   0&   0&   1&   1&   1&   0\\[2mm]
+   0&   0&   0&   1&   1&   1&   1&   1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}\downarrow
+&\maru{2}+\maru{4}\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrrr@{\quad}|rrrr}
+\quad&\quad&\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   0&   0&   1&   0&   1&   0&   0&   0\\[2mm]
+   1&   0&   0&   0&   1&   2&   1&   1\\[2mm]
+   0&   1&   0&   0&   1&   1&   1&   0\\[2mm]
+   0&   0&   0&   1&   1&   1&   1&   1
+\end{array}\right)$\par
+%% 操作内容
+$\begin{array}{ll}\downarrow
+&\maru{2}を1行目\\
+&\maru{3}を2行目\\
+&\maru{1}を3行目\\
+\end{array}$\par
+%% 得た行列
+$\left(\begin{array}{rrrr@{\quad}|rrrr}
+\quad&\quad&\quad&\quad&\quad&\quad&\quad&\quad\\[-7mm]
+   1&   0&   0&   0&   1&   2&   1&   1\\[2mm]
+   0&   1&   0&   0&   1&   1&   1&   0\\[2mm]
+   0&   0&   1&   0&   1&   0&   0&   0\\[2mm]
+   0&   0&   0&   1&   1&   1&   1&   1
+\end{array}\right)$\par
+
+よって逆行列は，
+$\left(\begin{array}{rrrr}
+\quad&\quad&\quad&\quad\\[-7mm]
+   1&   2&   1&   1\\[2mm]
+   1&   1&   1&   0\\[2mm]
+   1&   0&   0&   0\\[2mm]
+   1&   1&   1&   1
+\end{array}\right)$\par
+
+\newpage
+
+\end{multicols}
+
+%\end{CKdata}
+%\closetxt%% ここまでの内容をファイルに出力する
+
+%\renewcommand{\ctoi}{Ckeep} % ctoi部分を通常の黒色
+%\renewcommand{\ckai}{Cmagenta} % ckai部分をマゼンタ色
+%\printdoc % 上で定義した本文の挿入
+
+\end{document}

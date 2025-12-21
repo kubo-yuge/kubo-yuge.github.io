@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+    <title>taisyoidou2.cdy</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #CSConsole {
+            background-color: #FAFAFA;
+            border-top: 1px solid #333333;
+            bottom: 0px;
+            height: 200px;
+            overflow-y: scroll;
+            position: fixed;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cindyjs.org/dist/v0.8/CindyJS.css">
+    <script type="text/javascript" src="https://cindyjs.org/dist/v0.8/Cindy.js"></script>
+    <script type="text/javascript" src="https://cindyjs.org/dist/v0.8/KetCindyPlugin.js"></script>
+<script id="csinit" type="text/x-cindyscript">
+//KETlib
+use("KetCindyPlugin");
+Dircdy=loaddirectory;
+setdirectory(gethome());
+import("ketcindy.ini");
+
+;
+
+</script>
+<script id="csdraw" type="text/x-cindyscript">
+//figures
+Ketinit();
+//Setparent("");
+Setketcindyjs(["Nolabel=all","Color=[0,0,0,0.1]"]);
+
+Addax(1);
+Setax(["a","x","e","y","n","O","se"]); 
+Plotdata("1","2*x","x=[-5,5]");
+Setpt(3);
+Putpoint("P",[3,3],[P.x,P.y]);
+Pointdata("P",P.xy);
+Putpoint("Q",[(-3*P.x+4*P.y)/5,(4*P.x+3*P.y)/5]);
+Pointdata("Q",Q);
+Listplot([P,Q]);
+Putintersect("M","gr1","sgPQ"); 
+Segmark("1",[P,M],["Type=2"]); 
+Segmark("2",[Q,M],["Type=2"]); 
+
+
+Htickmark([1,"1",2,"2",3,"3",4,"4"]);
+Htickmark([-1,"-1",-2,"-2"]);
+Vtickmark([1,"1",2,"2",3,"3",4,"4"]);
+Vtickmark([-1,"-1",-2,"-2"]);
+
+if(P.y<=Q.y,
+  Letter(P,"ne2","P$("+text(P.x)+","+text(P.y)+")$");
+  Letter(Q,"n2w","Q$("+text(Q.x)+","+text(Q.y)+")$");
+);
+if(P.y>Q.y,
+  Letter(P,"n2w","P$("+text(P.x)+","+text(P.y)+")$");
+  Letter(Q,"s2e","Q$("+text(Q.x)+","+text(Q.y)+")$");
+);
+
+Expr([3,4],"n","y=2x");
+
+//Figpdf();
+Windispg();
+//Help("Putinter");
+
+;
+
+</script>
+    <script type="text/javascript">
+var cdy = CindyJS({
+  scripts: "cs*",
+  defaultAppearance: {
+    dimDependent: 0.7,
+    fontFamily: "sans-serif",
+    lineSize: 1,
+    pointSize: 5.0,
+    textsize: 12.0
+  },
+  angleUnit: "°",
+  geometry: [
+    {name: "SW", type: "Free", pos: [4.0, 4.0, -1.6305030700806185], color: [1.0, 0.0, 0.0], labeled: true},
+    {name: "NE", type: "Free", pos: [4.0, 4.0, 0.8], color: [1.0, 0.0, 0.0], labeled: true},
+    {name: "P", type: "Free", pos: [4.0, 1.3333333333333333, 1.3333333333333333], color: [1.0, 0.0, 0.0], labeled: true},
+    {name: "Q", type: "Free", pos: [1.3333333333333333, -4.0, -1.3333333333333333], color: [1.0, 0.0, 0.0], labeled: true},
+    {name: "M", type: "Free", pos: [-2.0, -4.0, -2.0], color: [1.0, 0.0, 0.0], labeled: true},
+    {name: "Text1", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [1.0, 0.286, 0.286], fillalpha: 0.27272728085517883, script: "Viewtex();\nkc();", text: "Figure", textsize: 18.0, dock: {corner: "UL", offset: [10.0, -20.0]}},
+    {name: "Text2", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 0.0], fillalpha: 0.27272728085517883, script: "if(length(Shellparent)>0,\n  Makeshell(),Makebat();\n);\nWritetoSci(2);\nkc();", text: "Parent", textsize: 18.0, dock: {corner: "UL", offset: [77.0, -20.0]}},
+    {name: "Text21", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [0.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "Mkketcindyjs();", text: "KeTJS", textsize: 18.0, dock: {corner: "UL", offset: [488.0, -20.0]}},
+    {name: "Text22", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [0.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "Mkketcindyjs(append(Ketjsoption(),\"Web=n\"));\n", text: "KeTJSoff", textsize: 18.0, dock: {corner: "UL", offset: [551.0, -20.0]}}
+  ],
+  ports: [{
+    id: "CSCanvas",
+    width: 805,
+    height: 442,
+    transform: [{visibleRect: [-6.678637095690245, 6.176483930600753, 9.4906948201914, -2.7015840281814674]}],
+    axes: true,
+    grid: 1.0,
+    snap: true,
+    background: "rgb(168,176,192)"
+  }],
+  csconsole: false,
+  use: ["katex"],
+  cinderella: {build: 2055, version: [3, 0, 2055]}
+});
+    </script>
+</head>
+<body>
+    <div id="CSCanvas"></div>
+</body>
+</html>
