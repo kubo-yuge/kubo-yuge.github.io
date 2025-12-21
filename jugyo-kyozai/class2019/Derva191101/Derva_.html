@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Derva_.cdy</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        #CSConsole {
+            background-color: #FAFAFA;
+            border-top: 1px solid #333333;
+            bottom: 0px;
+            height: 200px;
+            overflow-y: scroll;
+            position: fixed;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cindyjs.org/dist/v0.8/CindyJS.css">
+    <script type="text/javascript" src="https://cindyjs.org/dist/v0.8/Cindy.js"></script>
+    <script type="text/javascript" src="https://cindyjs.org/dist/v0.8/KetCindyPlugin.js"></script>
+<script id="csinit" type="text/x-cindyscript">
+//KETlib
+use("KetCindyPlugin");
+Dircdy=loaddirectory;
+setdirectory(gethome());
+import("ketcindy.ini");
+
+ky="";
+;
+
+</script>
+<script id="csdraw" type="text/x-cindyscript">
+//figures
+Ketinit();
+//Setfiles("Derva");
+
+Setketcindyjs(["Sc=1.2","Nolabel=all","Color=lightgray","Figure=y"]);
+Ketcindyjsbody(["<p,f5>微分係数の復習"],[]);
+Addax(1);
+
+F1="(x*(x^2-9))/9";
+Plotdata("1",F1,"x",[]);
+Putoncurve("A","gr1",["nodisp"]);
+Putoncurve("B","gr1");
+
+Lineplot("1",[A,B],["do"]);
+Letter([A,"se","A",B,"se","B"]);
+
+Plotdata("2","(((A.x)^2)/3-1)*(x-A.x)+A.y","x",["da"]);
+
+Windispg();
+//Help("Point");
+;
+
+</script>
+    <script type="text/javascript">
+var cdy = CindyJS({
+  scripts: "cs*",
+  defaultAppearance: {
+    dimDependent: 0.7,
+    fontFamily: "sans-serif",
+    lineSize: 1,
+    pointSize: 5.0,
+    textsize: 12.0
+  },
+  angleUnit: "°",
+  geometry: [
+    {name: "SW", type: "Free", pos: [4.0, 4.0, -0.8], color: [1.0, 0.0, 0.0], labeled: true},
+    {name: "NE", type: "Free", pos: [4.0, 4.0, 0.8], color: [1.0, 0.0, 0.0], labeled: true},
+    {name: "A", type: "Free", pos: [4.0, -0.7247084870848709, -1.4760147601476015], color: [1.0, 0.0, 0.0], labeled: true},
+    {name: "B", type: "Free", pos: [4.0, -3.56, -4.0], color: [1.0, 0.0, 0.0], labeled: true},
+    {name: "Text1", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [1.0, 0.286, 0.286], fillalpha: 0.27272728085517883, script: "Viewtex();\nkc();", text: "Figure", textsize: 18.0, dock: {corner: "UL", offset: [10.0, -20.0]}},
+    {name: "Text2", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 0.0], fillalpha: 0.27272728085517883, script: "if(length(Shellparent)>0,\n  Makeshell(),Makebat();\n);\nWritetoSci(2);\nkc();", text: "Parent", textsize: 18.0, dock: {corner: "UL", offset: [77.0, -20.0]}},
+    {name: "Text21", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [0.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "Mkketcindyjs();", text: "KeTJS", textsize: 18.0, dock: {corner: "UL", offset: [488.0, -20.0]}},
+    {name: "Text22", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [0.0, 1.0, 1.0], fillalpha: 0.27272728085517883, script: "Mkketcindyjs(append(Ketjsoption(),\"Web=n\"));\n", text: "KeTJSoff", textsize: 18.0, dock: {corner: "UL", offset: [551.0, -20.0]}}
+  ],
+  ports: [{
+    width: 794,
+    height: 400,
+    id: "CSCanvas",
+    transform: [{visibleRect: [-10.785368674698795, 7.086592771084337, 15.204260240963855, -6.006419277108433]}],
+    axes: true,
+    grid: 1.0,
+    background: "rgb(168,176,192)"
+  }],
+  csconsole: false,
+  cinderella: {build: 2091, version: [3, 0, 2091]}
+});
+    </script>
+</head>
+<body>
+    <div id="CSCanvas"></div>
+</body>
+</html>
