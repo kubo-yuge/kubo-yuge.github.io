@@ -67,27 +67,33 @@
     }
 
     /* ★修正3: 新規タブアイコンの作り方を変更（divを廃止） */
-    /* 枠の部分 */
-    .icon-box {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid #999;
-        width: 1.6em;  /* 枠の幅 */
-        height: 1.4em; /* 枠の高さ */
-        vertical-align: middle; 
-        margin-left: 5px;
-        background-color: #fff;
-    }
-    
-    /* 回転させる矢印の部分 */
-    .icon-arrow {
-        display: inline-block;
-        transform: rotate(-90deg);
-        font-weight: bold;
-        line-height: 1; /* 余分な隙間をなくす */
-    }
+/* 枠の部分 */
+.icon-box {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #999;
+    /* 枠のサイズをさらに小さく調整 */
+    width: 0.95em;  
+    height: 1.0em; 
+    vertical-align: middle; 
+    margin-left: 5px;
+    background-color: #fff;
+    /* はみ出しを隠し、位置の微調整をしやすくする */
+    overflow: hidden; 
+}
 
+/* 回転させる矢印の部分 */
+.icon-arrow {
+    display: inline-block;
+    transform: rotate(-90deg);
+    font-weight: bold;
+    line-height: 1;
+    /* ★ここがポイント：relativeにして、topで位置を微調整 */
+    position: relative;
+    top: -0.1em; /* 負の値で上に持ち上げる（-0.15em など微調整可能） */
+    font-size: 1em; /* 枠に対して矢印が大きすぎる場合は少し小さく */
+}
     /* 改行防止用のクラス */
     .nowrap-link {
         white-space: nowrap; 
