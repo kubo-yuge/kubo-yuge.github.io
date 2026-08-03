@@ -1,0 +1,115 @@
+% !TEX program = lualatex
+% !TEX encoding = UTF-8
+\documentclass[luaaotf,ja=standard]{ltjsarticle}
+\usepackage{amsmath,amssymb}
+\usepackage{pict2e}
+\usepackage{xcolor}
+
+\begin{document}
+
+\title{点P・点Qの座標計算に関する幾何学的解説図}
+\author{}
+\date{}
+\maketitle
+
+本ソースコードは、円のインボリュート（糸巻き線）における接点 $P$ および糸の先端 $Q$ の座標を幾何学的に導出するための設計図を出力します。LuaLaTeX環境でそのままコンパイル可能です。
+
+\begin{center}
+\pagestyle{empty}
+\ Brody
+\setlength{\unitlength}{1cm}
+% 描画領域の指定 (幅14cm, 高さ10cm, 原点位置のオフセット)
+\begin{picture}(14,10)(-5,-2)
+  
+  % --------------------------------------------------
+  % 1. 座標軸と原点
+  % --------------------------------------------------
+  \linethickness{0.2mm}
+  \color{gray}
+  \put(-4,0){\vector(1,0){11}} % x軸
+  \put(0,-1){\vector(0,1){8}}  % y軸
+  \put(6.8,-0.4){$x$}
+  \put(-0.4,6.8){$y$}
+  \put(-0.4,-0.4){$O$}
+
+  % --------------------------------------------------
+  % 2. 基準となる円（半径 R = 3）と始点X
+  % --------------------------------------------------
+  \linethickness{0.3mm}
+  \color{lightgray}
+  \put(0,0){\circle{6}} % 直径6 = 半径3
+  
+  \color{black}
+  \put(3,0){\circle*{0.15}}
+  \put(3.1,-0.4){$X(3,0)$}
+
+  % --------------------------------------------------
+  % 3. 半径線と中心角（tha, the）の指定
+  % --------------------------------------------------
+  \linethickness{0.2mm}
+  % OP (tha = 45度方向への半径)
+  \moveto(0,0)\lineto(2.12,2.12)\strokepath
+  % OR (the = 135度方向への半径)
+  \moveto(0,0)\lineto(-2.12,2.12)\strokepath
+
+  % 角度を示す円弧
+  \put(0,0){\arc[0,45]{0.8}}
+  \put(0,0){\arc[0,135]{0.5}}
+  \put(1.0,0.3){$\theta_a$}
+  \put(-0.5,0.7){$\theta_e$}
+
+  % --------------------------------------------------
+  % 4. 点Pの座標（極座標からの導出用補助線）
+  % --------------------------------------------------
+  \linethickness{0.2mm}
+  \color{gray}
+  \moveto(2.12,2.12)\lineto(2.12,0)\strokepath % x座標への垂線
+  \moveto(2.12,2.12)\lineto(0,2.12)\strokepath % y座標への垂線
+  \put(0.6,-0.45){$3\cos\theta_a$}
+  \put(2.2,1.0){$3\sin\theta_a$}
+
+  % 点Pのプロット
+  \color{black}
+  \put(2.12,2.12){\circle*{0.15}}
+  \put(2.3,2.4){$P(3\cos\theta_a, 3\sin\theta_a)$}
+
+  % --------------------------------------------------
+  % 5. ほどいた糸の長さ L (赤い円弧 PR)
+  % --------------------------------------------------
+  \linethickness{0.6mm}
+  \color{red}
+  \put(0,0){\arc[45,135]{3}}
+  \put(-0.8,3.2){$L = 3(\theta_e - \theta_a)$}
+
+  % 点Rのプロット
+  \color{black}
+  \put(-2.12,2.12){\circle*{0.15}}
+  \put(-2.5,2.3){$R$}
+
+  % --------------------------------------------------
+  % 6. 接線 PQ（ほどいた直線の糸）
+  % --------------------------------------------------
+  \linethickness{0.6mm}
+  \color{cyan}
+  % P(2.12, 2.12) から 接線方向へ長さL(=4.71) だけ進んだ Q(-1.21, 5.45) への線
+  \moveto(2.12,2.12)\lineto(-1.21,5.45)\strokepath
+
+  % --------------------------------------------------
+  % 7. 点Qの座標増分を表す直角三角形
+  % --------------------------------------------------
+  \linethickness{0.3mm}
+  \color{blue}
+  \moveto(2.12,2.12)\lineto(-1.21,2.12)\strokepath % 水平増分 (左向き)
+  \moveto(-1.21,2.12)\lineto(-1.21,5.45)\strokepath % 垂直増分 (上向き)
+  \put(0.2,1.7){$L\sin\theta_a$}
+  \put(-2.5,3.5){$L\cos\theta_a$}
+
+  % 点Qのプロットと最終座標の数式
+  \color{black}
+  \put(-1.21,5.45){\circle*{0.15}}
+  \put(-4.8,5.8){$Q = P + L(-\sin\theta_a, \cos\theta_a)$}
+
+\end{picture}
+\end{center}
+
+\end{document}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+    <title>radian.cdy</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        #CSConsole {
+            background-color: #FAFAFA;
+            border-top: 1px solid #333333;
+            bottom: 0px;
+            height: 200px;
+            overflow-y: scroll;
+            position: fixed;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cindyjs.org/dist/v0.8/CindyJS.css">
+    <script type="text/javascript" src="https://cindyjs.org/dist/v0.8/Cindy.js"></script>
+    <script type="text/javascript" src="https://cindyjs.org/dist/v0.8/KetCindyPlugin.js"></script>
+<script id="csinit" type="text/x-cindyscript">
+//KETlib
+use("KetCindyPlugin");
+Dircdy=loaddirectory;
+setdirectory(gethome());
+import("ketcindy.ini");
+
+;
+
+</script>
+<script id="cskeytyped" type="text/x-cindyscript">
+//Script (CindyScript)
+kL=keydownlist();
+if(length(kL)>0,
+  if(kL==[17,70], //Ctr+f (Figures)
+    Viewtex();
+    kc();
+  );
+  if(kL==[16,17,80], //Ctr+Shift+p (Parent)
+    if(length(Shellparent)>0,
+      Makeshell(),Makebat();
+    );
+    WritetoSci(2);
+    kc();
+  );
+  if(kL==[17,74], //Ctr+j (Ketjsoff)
+    Mkketcindyjs(append(KETJSOP,"Web=n"));
+  );
+  if(kL==[16,17,74], //Ctr+Shift+j (Ketjson)
+    Mkketcindyjs(append(KETJSOP,"Web=yj"));
+  );
+);
+;
+
+</script>
+<script id="csdraw" type="text/x-cindyscript">
+//figures
+Ketinit();
+//Setparent(Cdyname()+"p");
+//Setunitlen("1cm");
+//Fontsize("n");
+Addax(0);
+Listplot("5",[[3,-3],[3,4]],["dr,2"]);
+Listplot("6",[[3,0],[24,0]],["dr,2"]);
+Listplot("7",[[3+3*pi/2,.4],[3+3*pi/2,-.4]]);
+Setmarklen(2);
+Htickmark([3,"s.9e.9",0,3+3*pi/2,"s2","\frac{\pi}{2}"]);
+Htickmark([3+3*pi,"s2","\pi",3+6*pi,"s2","2\pi"]);
+Setwindow([-4,24],[-5,4]);
+Putpoint("O",[0,0]);
+Circledata("11",[O,[3,0]]);
+
+Slider("A",[-pi/2,-4.5],[6.3,-4.5]);
+Slider("C",[0,-3.5],[2*pi,-3.5]);
+Defvar(["the",C.x]);Defvar(["tha",A.x]);
+Putpoint("P",3*[cos(tha),sin(tha)]);
+Putpoint("R",3*[cos(the),sin(the)]);
+if(tha>0,
+Putpoint("Q",P+3*(the-tha)*[-sin(tha),cos(tha)]);
+);
+if(tha<=0,
+Putpoint("Q",X+3*the*[-sin(tha),cos(tha)]);
+);
+if(tha>the,
+Q.visible = false,Q.visible = true
+);
+Putpoint("X",[3,0]);
+Listplot("1",[X,O,R]);
+Polarplot("1","3","t=[0,the]",["dr,4","Color=red"]);
+if((tha>0)&(tha<=the),
+Polarplot("2","3","t=[tha,the]",["dr,4","Color=red"]);
+Polarplot("3","3","t=[0,tha]",["dr,4","Color=cyan"]);
+Listplot("2",[P,Q],["dr,4","Color=cyan"]);
+);
+if(tha<=0,
+Polarplot("3","3","t=[0,the]",["dr,4","Color=red"]);
+Listplot("2",[X,Q],["dr,4","Color=cyan"]);
+);
+Letter([[2,6],"e","水色の線と赤色の線は，同じ長さ"],["Size=2"]);
+//Figpdf();
+//BBdata();
+Windispg();
+
+;
+
+</script>
+    <script type="text/javascript">
+var cdy = CindyJS({
+  scripts: "cs*",
+  defaultAppearance: {
+    dimDependent: 0.7,
+    fontFamily: "sans-serif",
+    lineSize: 1,
+    pointSize: 5.0,
+    textsize: 12.0
+  },
+  angleUnit: "°",
+  geometry: [
+    {name: "C", type: "Free", pos: [3.555389903928, -4.0, 1.1428571428571428], color: [1.0, 0.0, 0.0], labeled: true},
+    {name: "NE", type: "Free", pos: [4.0, 0.6666666666666666, 0.16666666666666666], color: [1.0, 0.0, 0.0], labeled: true},
+    {name: "O", type: "Free", pos: [0.0, 0.0, 4.0], color: [1.0, 0.0, 0.0], labeled: true},
+    {name: "B", type: "Free", pos: [0.48035444261347143, -4.0, -1.0859148697037895], color: [1.0, 0.0, 0.0], visible: false, labeled: true},
+    {name: "SW", type: "Free", pos: [-3.2, -4.0, 0.8], color: [1.0, 0.0, 0.0], labeled: true},
+    {name: "P", type: "Free", pos: [4.0, 0.06726511077672823, 1.3335218448041097], color: [1.0, 0.0, 0.0], labeled: true},
+    {name: "A", type: "Free", pos: [4.0, -2.8571428571428563, 0.6349206349206348], color: [1.0, 0.0, 0.0], labeled: true},
+    {name: "Q", type: "Free", pos: [1.3285692545301309, -4.0, 0.4203752804126761], color: [1.0, 0.0, 0.0], visible: false, labeled: true},
+    {name: "X", type: "Free", pos: [4.0, 0.0, 1.3333333333333333], color: [1.0, 0.0, 0.0]},
+    {name: "R", type: "Free", pos: [4.0, -0.122544267917509, -1.3339588989836664], color: [1.0, 0.0, 0.0], labeled: true},
+    {name: "Text1", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [1.0, 0.286, 0.286], fillalpha: 0.27272728085517883, script: "Viewtex();\nkc();", text: "Figure", textsize: 18.0, dock: {corner: "UL", offset: [10.0, -20.0]}},
+    {name: "Text2", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [1.0, 1.0, 0.0], fillalpha: 0.27272728085517883, script: "if(length(Shellparent)>0,\n  Makeshell(),Makebat();\n);\nif(indexof(Libname,\"sci\")>0,\n  writetosci(2),writetoRS(2)\n);\nkc();", text: "Parent", textsize: 18.0, dock: {corner: "UL", offset: [77.0, -20.0]}},
+    {name: "Text3", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [0.0, 1.0, 1.0], fillalpha: 0.5726495726495726, script: "Mkketcindyjs(append(KETJSOP,\"Web=y\"));", text: "Ketjson", textsize: 18.0, dock: {corner: "UL", offset: [144.0, -20.0]}},
+    {name: "Text4", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [0.0, 1.0, 1.0], fillalpha: 0.4358974358974359, script: "Mkketcindyjs(append(KETJSOP,\"Web=n\"));", text: "Ketjsoff", textsize: 18.0, dock: {corner: "UL", offset: [221.0, -20.0]}},
+    {name: "Text5", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [1.0, 0.929, 0.6], fillalpha: 0.27272728085517883, script: "Parafolder();", text: "ParaF", textsize: 18.0, dock: {corner: "UL", offset: [301.0, -20.0]}},
+    {name: "Text6", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [0.51, 0.949, 1.0], fillalpha: 0.27272728085517883, script: "Mkanimation();", text: "Anime", textsize: 18.0, dock: {corner: "UL", offset: [361.0, -20.0]}},
+    {name: "Text7", type: "Button", color: [0.0, 0.0, 0.0], fillcolor: [0.0, 0.0, 1.0], fillalpha: 0.27272728085517883, script: "Mkflipanime();", text: "Flip", textsize: 18.0, dock: {corner: "UL", offset: [428.0, -20.0]}}
+  ],
+  ports: [{
+    width: 1090,
+    height: 752,
+    id: "CSCanvas",
+    transform: [{visibleRect: [-7.159359840256064, 11.687774527634065, 27.601006422011686, -12.293689168902953]}],
+    axes: true,
+    grid: 1.0,
+    background: "rgb(168,176,192)"
+  }],
+  csconsole: false,
+  cinderella: {build: 2125, version: [3, 0, 2125]}
+});
+    </script>
+</head>
+<body>
+    <div id="CSCanvas"></div>
+</body>
+</html>
