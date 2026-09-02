@@ -3,6 +3,23 @@
 <head>
 <meta charset="utf-8">
 <title>Kubo KeTCindy</title>
+
+<!-- katex設定の先頭 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.css" integrity="sha384-6LkG2wmY8FK9E0vU9OOr8UvLwsaqUg9SETfpq4uTCN1agNe8HRdE9ABlk+fVx6gZ" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.js" integrity="sha384-31El76TwmbHj4rF9DyLsygbq6xoIobG0W+jqXim+a3dU9W53tdH3A/ngRPxOzzaB" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous">
+  </script>
+  
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {delimiters: [
+      {left: "\\[", right: "\\]", display: true},
+      {left: "$", right: "$", display: false}
+    ]});
+  });
+  </script>
+<!-- katex設定の末尾 -->
+
 <style>
     /* ページ全体の基本設定 */
     body {
@@ -105,8 +122,8 @@
 <header class="header-container">
     <div class="header-text">
         <h1 class="main-title">Kubo KeTCindy</h1>
-        <p class="update-info">更新：2026年7月16日</p>
-        <p class="update-detail">：KeTCindy導入について整理した</p>
+        <p class="update-info">更新：2026年9月2日</p>
+        <p class="update-detail">：RIMS2026の活動と数独ソルバーの紹介</p>
     </div>
     
     <div class="qr-box">
@@ -136,11 +153,6 @@
         <a href="https://kubo-yuge.github.io/MacへのKeTCindy導入マニュアル.pdf">MacへのKeTCindy導入マニュアル(pdf版)</a>&emsp;<a href="https://kubo-yuge.github.io/MacへのKeTCindy導入マニュアル.docx">(ワード版)</a>&emsp;2026年7月16日作成
     </p>
 
-<!-- 第8回 数学教育セミナーへのリンク -->
-    <p>
-        <a href="https://kubo-yuge.github.io/KeTCindyTips/doc/KeTSlideUP/HowtoUseKeTSlideLua.txt">第8回数学教育セミナーでKeTSlideを紹介しました</a>&emsp;2026年2月28日実施
-    </p>
-
 <!-- Algebrite関数へのリンク -->
     <p>
         <a href="indexAlgebrite.html">Algebrite関連のページへ</a>&emsp;Algebrite関数リファレンス(日本語訳)あり
@@ -149,11 +161,6 @@
 <!-- KetMathとKeTLTSへのリンク -->
     <p>
         <a href="indexKetMath.html">KetMathとKeTLTSへのリンク</a>&emsp;KeTMath数式入力の確認用リンクあり
-    </p>
-
-<!-- ATCM2024へのリンク -->
-    <p>
-        <a href="https://kubo-yuge.github.io/atcm2024/">ATCM2024に参加しました</a>&emsp;2024年12月
     </p>
 
 <!-- 動作確認のペ－ジへ -->
@@ -170,6 +177,24 @@
     <p>
         <a href="jugyo-kyozai/jugyo-kyozai.html">久保の教材集</a>&emsp;更新：2024年12月(リンク先の整理)
     </p>
+
+<p>&emsp;<br>発表・ワークショップ：</p>
+
+<!-- RIMS2026へのリンク -->
+    <p>
+        <a href="work2026/RIMS2026.html">RIMS共同研究「数学ソフトウェアとその効果的教育利用に関する研究」で発表しました</a>&emsp;2026年8月27日
+    </p>
+
+<!-- 第8回 数学教育セミナーへのリンク -->
+    <p>
+        <a href="https://kubo-yuge.github.io/KeTCindyTips/doc/KeTSlideUP/HowtoUseKeTSlideLua.txt">第8回数学教育セミナーでKeTSlideを紹介しました</a>&emsp;2026年2月28日実施
+    </p>
+
+<!-- ATCM2024へのリンク -->
+    <p>
+        <a href="https://kubo-yuge.github.io/atcm2024/">ATCM2024でワークショップを開催しました</a>&emsp;2024年12月
+    </p>
+
 </div>
 
 </body>
